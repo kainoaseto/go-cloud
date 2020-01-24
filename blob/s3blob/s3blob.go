@@ -23,7 +23,7 @@
 // for more details.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // Escaping
 //
@@ -51,7 +51,7 @@
 //  - Attributes: s3.HeadObjectOutput
 //  - CopyOptions.BeforeCopy: *s3.CopyObjectInput
 //  - WriterOptions.BeforeWrite: *s3manager.UploadInput
-package s3blob // import "gocloud.dev/blob/s3blob"
+package s3blob // import "github.com/kainoaseto/go-cloud/blob/s3blob"
 
 import (
 	"context"
@@ -73,11 +73,11 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/escape"
+	gcaws "github.com/kainoaseto/go-cloud/aws"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/escape"
 )
 
 const defaultPageSize = 1000
@@ -124,7 +124,7 @@ const Scheme = "s3"
 //
 // The URL host is used as the bucket name.
 //
-// See gocloud.dev/aws/ConfigFromURLParams for supported query parameters
+// See github.com/kainoaseto/go-cloud/aws/ConfigFromURLParams for supported query parameters
 // that affect the default AWS session.
 type URLOpener struct {
 	// ConfigProvider must be set to a non-nil value.

@@ -23,8 +23,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package awsmysql // import "gocloud.dev/mysql/awsmysql"
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
+package awsmysql // import "github.com/kainoaseto/go-cloud/mysql/awsmysql"
 
 import (
 	"context"
@@ -39,8 +39,8 @@ import (
 	"contrib.go.opencensus.io/integrations/ocsql"
 	"github.com/go-sql-driver/mysql"
 	"github.com/google/wire"
-	"gocloud.dev/aws/rds"
-	gcmysql "gocloud.dev/mysql"
+	"github.com/kainoaseto/go-cloud/aws/rds"
+	gcmysql "github.com/kainoaseto/go-cloud/mysql"
 )
 
 // Set is a Wire provider set that provides a *sql.DB given
@@ -121,7 +121,7 @@ func (c *connector) Connect(ctx context.Context) (driver.Conn, error) {
 		tlsConfigNum := tlsConfigCounter.n
 		tlsConfigCounter.n++
 		tlsConfigCounter.mu.Unlock()
-		tlsConfigName := fmt.Sprintf("gocloud.dev/mysql/awsmysql/%d", tlsConfigNum)
+		tlsConfigName := fmt.Sprintf("github.com/kainoaseto/go-cloud/mysql/awsmysql/%d", tlsConfigNum)
 		err = mysql.RegisterTLSConfig(tlsConfigName, &tls.Config{
 			RootCAs: certPool,
 		})

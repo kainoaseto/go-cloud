@@ -23,7 +23,7 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // Escaping
 //
@@ -45,7 +45,7 @@
 //  - Attributes: storage.ObjectAttrs
 //  - CopyOptions.BeforeCopy: *CopyObjectHandles, *storage.Copier
 //  - WriterOptions.BeforeWrite: **storage.ObjectHandle, *storage.Writer
-package gcsblob // import "gocloud.dev/blob/gcsblob"
+package gcsblob // import "github.com/kainoaseto/go-cloud/blob/gcsblob"
 
 import (
 	"context"
@@ -68,12 +68,12 @@ import (
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/escape"
-	"gocloud.dev/internal/useragent"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/internal/escape"
+	"github.com/kainoaseto/go-cloud/internal/useragent"
 )
 
 const defaultPageSize = 1000

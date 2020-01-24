@@ -27,10 +27,10 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sns"
 	"github.com/aws/aws-sdk-go/service/sqs"
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
-	"gocloud.dev/pubsub/drivertest"
+	"github.com/kainoaseto/go-cloud/internal/testing/setup"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/driver"
+	"github.com/kainoaseto/go-cloud/pubsub/drivertest"
 )
 
 const (

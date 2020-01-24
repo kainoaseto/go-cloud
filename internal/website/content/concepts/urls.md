@@ -12,7 +12,7 @@ needed to call its constructor. For example, calling
 `blob.OpenBucket("s3blob://my-bucket")` will return a `*blob.Bucket` created
 using [`s3blob.OpenBucket`][].
 
-[`s3blob.OpenBucket`]: https://godoc.org/gocloud.dev/blob/s3blob#OpenBucket
+[`s3blob.OpenBucket`]: https://godoc.org/github.com/kainoaseto/go-cloud/blob/s3blob#OpenBucket
 
 <!--more-->
 
@@ -55,7 +55,7 @@ sensitive).
    `mymux.RegisterBucket(s3blob.Scheme, myS3URLOpener)`
 4. Now use your mux to open URLs: `mymux.OpenBucket("s3://my-bucket")`
 
-[`blob.OpenBucket`]: https://godoc.org/gocloud.dev/blob#OpenBucket
-[`BucketURLOpener`]: https://godoc.org/gocloud.dev/blob#BucketURLOpener
-[`DefaultURLMux`]: https://godoc.org/gocloud.dev/blob#DefaultURLMux
-[`RegisterBucket`]: https://godoc.org/gocloud.dev/blob#URLMux.RegisterBucket
+[`blob.OpenBucket`]: https://godoc.org/github.com/kainoaseto/go-cloud/blob#OpenBucket
+[`BucketURLOpener`]: https://godoc.org/github.com/kainoaseto/go-cloud/blob#BucketURLOpener
+[`DefaultURLMux`]: https://godoc.org/github.com/kainoaseto/go-cloud/blob#DefaultURLMux
+[`RegisterBucket`]: https://godoc.org/github.com/kainoaseto/go-cloud/blob#URLMux.RegisterBucket

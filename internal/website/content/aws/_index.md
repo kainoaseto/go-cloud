@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/aws
+title: github.com/kainoaseto/go-cloud/aws
 type: pkg
 ---

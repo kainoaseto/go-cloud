@@ -18,25 +18,25 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/memdocstore"
+	"github.com/kainoaseto/go-cloud/docstore"
+	"github.com/kainoaseto/go-cloud/docstore/memdocstore"
 )
 
 func ExampleOpenCollection() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
 
 	coll, err := memdocstore.OpenCollection("keyField", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer coll.Close()
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	// Output:
 }
 
 func ExampleOpenCollectionWithKeyFunc() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	type HighScore struct {
 		Game   string
 		Player string
@@ -53,14 +53,14 @@ func ExampleOpenCollectionWithKeyFunc() {
 		log.Fatal(err)
 	}
 	defer coll.Close()
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	// Output:
 }
 
 func Example_openCollectionFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/docstore/memdocstore"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/docstore/memdocstore"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// docstore.OpenCollection creates a *docstore.Collection from a URL.
@@ -69,6 +69,6 @@ func Example_openCollectionFromURL() {
 		log.Fatal(err)
 	}
 	defer coll.Close()
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	// Output:
 }

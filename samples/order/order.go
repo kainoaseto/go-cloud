@@ -17,9 +17,9 @@
 // can use to place and view orders; and a processor, which performs the
 // conversions. This binary can run both together in one process (the default),
 // or it can run either on its own. Either way, the two components:
-//  - communicate over a topic using the gocloud.dev/pubsub API;
-//  - write orders to a database using the gocloud.dev/docstore API;
-//  - and save image files to cloud storage using the gocloud.dev/blob API.
+//  - communicate over a topic using the github.com/kainoaseto/go-cloud/pubsub API;
+//  - write orders to a database using the github.com/kainoaseto/go-cloud/docstore API;
+//  - and save image files to cloud storage using the github.com/kainoaseto/go-cloud/blob API.
 //
 // This application assumes at-least-once processing. Make sure the pubsub
 // implementation you provide to it has that behavior.
@@ -33,16 +33,16 @@ import (
 	"os"
 	"path/filepath"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/docstore"
-	"gocloud.dev/pubsub"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/docstore"
+	"github.com/kainoaseto/go-cloud/pubsub"
 )
 
 var (
-	requestTopicURL = flag.String("request-topic", "mem://requests", "gocloud.dev/pubsub URL for request topic")
-	requestSubURL   = flag.String("request-sub", "mem://requests", "gocloud.dev/pubsub URL for request subscription")
-	bucketURL       = flag.String("bucket", "", "gocloud.dev/blob URL for image bucket")
-	collectionURL   = flag.String("collection", "mem://orders/ID", "gocloud.dev/docstore URL for order collection")
+	requestTopicURL = flag.String("request-topic", "mem://requests", "github.com/kainoaseto/go-cloud/pubsub URL for request topic")
+	requestSubURL   = flag.String("request-sub", "mem://requests", "github.com/kainoaseto/go-cloud/pubsub URL for request subscription")
+	bucketURL       = flag.String("bucket", "", "github.com/kainoaseto/go-cloud/blob URL for image bucket")
+	collectionURL   = flag.String("collection", "mem://orders/ID", "github.com/kainoaseto/go-cloud/docstore URL for order collection")
 
 	port         = flag.Int("port", 10538, "HTTP port for frontend")
 	runFrontend  = flag.Bool("frontend", true, "run the frontend")

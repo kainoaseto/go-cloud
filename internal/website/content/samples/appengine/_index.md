@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/appengine
+title: github.com/kainoaseto/go-cloud/samples/appengine
 type: pkg
 ---

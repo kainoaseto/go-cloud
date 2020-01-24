@@ -20,13 +20,13 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/s3blob"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/s3blob"
 )
 
 func ExampleOpenBucket() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Establish an AWS session.
@@ -48,9 +48,9 @@ func ExampleOpenBucket() {
 }
 
 func Example_openBucketFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/blob/s3blob"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/blob/s3blob"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// blob.OpenBucket creates a *blob.Bucket from a URL.

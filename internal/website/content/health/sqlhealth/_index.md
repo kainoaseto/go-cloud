@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/health/sqlhealth
+title: github.com/kainoaseto/go-cloud/health/sqlhealth
 type: pkg
 ---

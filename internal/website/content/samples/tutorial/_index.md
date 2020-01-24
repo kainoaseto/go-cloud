@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/tutorial
+title: github.com/kainoaseto/go-cloud/samples/tutorial
 type: pkg
 ---

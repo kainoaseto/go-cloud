@@ -32,13 +32,13 @@ import (
 	"strings"
 	"time"
 
-	"gocloud.dev/blob"
-	_ "gocloud.dev/blob/fileblob"
-	"gocloud.dev/docstore"
-	_ "gocloud.dev/docstore/memdocstore"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	_ "gocloud.dev/pubsub/mempubsub"
+	"github.com/kainoaseto/go-cloud/blob"
+	_ "github.com/kainoaseto/go-cloud/blob/fileblob"
+	"github.com/kainoaseto/go-cloud/docstore"
+	_ "github.com/kainoaseto/go-cloud/docstore/memdocstore"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	_ "github.com/kainoaseto/go-cloud/pubsub/mempubsub"
 )
 
 // A processor holds the state for processing images.

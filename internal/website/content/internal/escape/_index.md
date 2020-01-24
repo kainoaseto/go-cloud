@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/escape
+title: github.com/kainoaseto/go-cloud/internal/escape
 type: pkg
 ---

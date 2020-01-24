@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package health provides health check handlers.
-package health // import "gocloud.dev/server/health"
+package health // import "github.com/kainoaseto/go-cloud/server/health"
 
 import (
 	"io"

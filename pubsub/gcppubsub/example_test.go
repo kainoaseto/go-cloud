@@ -18,14 +18,14 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/gcp"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/gcppubsub"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/gcppubsub"
 )
 
 func ExampleOpenTopic() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Your GCP credentials.
@@ -58,9 +58,9 @@ func ExampleOpenTopic() {
 }
 
 func Example_openTopicFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/pubsub/gcppubsub"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/pubsub/gcppubsub"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	topic, err := pubsub.OpenTopic(ctx, "gcppubsub://projects/myproject/topics/mytopic")
@@ -71,8 +71,8 @@ func Example_openTopicFromURL() {
 }
 
 func ExampleOpenSubscription() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Your GCP credentials.
@@ -107,9 +107,9 @@ func ExampleOpenSubscription() {
 }
 
 func Example_openSubscriptionFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/pubsub/gcppubsub"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/pubsub/gcppubsub"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	subscription, err := pubsub.OpenSubscription(ctx,

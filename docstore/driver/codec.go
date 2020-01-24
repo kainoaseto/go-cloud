@@ -24,8 +24,8 @@ import (
 	"strconv"
 
 	"github.com/golang/protobuf/proto"
-	"gocloud.dev/docstore/internal/fields"
-	"gocloud.dev/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/docstore/internal/fields"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
 )
 
 var (

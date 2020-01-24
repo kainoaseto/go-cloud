@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/docstore/driver
+title: github.com/kainoaseto/go-cloud/docstore/driver
 type: pkg
 ---

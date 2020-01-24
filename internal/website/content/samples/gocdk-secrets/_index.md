@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/gocdk-secrets
+title: github.com/kainoaseto/go-cloud/samples/gocdk-secrets
 type: pkg
 ---

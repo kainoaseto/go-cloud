@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/docstore/mongodocstore
+title: github.com/kainoaseto/go-cloud/docstore/mongodocstore
 type: pkg
 ---

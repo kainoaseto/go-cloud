@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/gcerr
+title: github.com/kainoaseto/go-cloud/internal/gcerr
 type: pkg
 ---

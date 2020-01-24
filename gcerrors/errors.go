@@ -19,7 +19,7 @@ package gcerrors
 import (
 	"context"
 
-	"gocloud.dev/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
 	"golang.org/x/xerrors"
 )
 

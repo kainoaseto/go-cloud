@@ -27,10 +27,10 @@ import (
 	"time"
 
 	"go.opencensus.io/trace"
-	"gocloud.dev/gcp"
-	"gocloud.dev/server"
-	"gocloud.dev/server/health"
-	"gocloud.dev/server/sdserver"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/server"
+	"github.com/kainoaseto/go-cloud/server/health"
+	"github.com/kainoaseto/go-cloud/server/sdserver"
 )
 
 // GlobalMonitoredResource implements monitoredresource.Interface to provide a

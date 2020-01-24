@@ -18,13 +18,13 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/mongodocstore"
+	"github.com/kainoaseto/go-cloud/docstore"
+	"github.com/kainoaseto/go-cloud/docstore/mongodocstore"
 )
 
 func ExampleOpenCollection() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	client, err := mongodocstore.Dial(ctx, "mongodb://my-host")
@@ -40,8 +40,8 @@ func ExampleOpenCollection() {
 }
 
 func ExampleOpenCollectionWithIDFunc() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	type HighScore struct {
 		Game   string
@@ -68,9 +68,9 @@ func ExampleOpenCollectionWithIDFunc() {
 }
 
 func Example_openCollectionFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/docstore/mongodocstore"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/docstore/mongodocstore"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// docstore.OpenCollection creates a *docstore.Collection from a URL.

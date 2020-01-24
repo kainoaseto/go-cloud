@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/server
+title: github.com/kainoaseto/go-cloud/server
 type: pkg
 ---

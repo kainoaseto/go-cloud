@@ -23,8 +23,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws/client"
 	dyn "github.com/aws/aws-sdk-go/service/dynamodb"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/docstore"
+	gcaws "github.com/kainoaseto/go-cloud/aws"
+	"github.com/kainoaseto/go-cloud/docstore"
 )
 
 func init() {
@@ -71,7 +71,7 @@ const Scheme = "dynamodb"
 //   - sort_key: the path to the sort key of a table or an index.
 //   - allow_scans: if "true", allow table scans to be used for queries
 //
-// See https://godoc.org/gocloud.dev/aws#ConfigFromURLParams for supported query
+// See https://godoc.org/github.com/kainoaseto/go-cloud/aws#ConfigFromURLParams for supported query
 // parameters for overriding the aws.Session from the URL.
 type URLOpener struct {
 	// ConfigProvider must be set to a non-nil value.

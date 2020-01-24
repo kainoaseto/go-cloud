@@ -23,13 +23,13 @@
 // for more details.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // As
 //
 // awskms exposes the following type for As:
 //  - Error: awserr.Error
-package awskms // import "gocloud.dev/secrets/awskms"
+package awskms // import "github.com/kainoaseto/go-cloud/secrets/awskms"
 
 import (
 	"context"
@@ -44,10 +44,10 @@ import (
 	"github.com/aws/aws-sdk-go/aws/client"
 	"github.com/aws/aws-sdk-go/service/kms"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/secrets"
+	gcaws "github.com/kainoaseto/go-cloud/aws"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/secrets"
 )
 
 func init() {
@@ -103,7 +103,7 @@ const Scheme = "awskms"
 // https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn
 // for more details.
 //
-// See gocloud.dev/aws/ConfigFromURLParams for supported query parameters
+// See github.com/kainoaseto/go-cloud/aws/ConfigFromURLParams for supported query parameters
 // for overriding the aws.Session from the URL.
 type URLOpener struct {
 	// ConfigProvider must be set to a non-nil value.

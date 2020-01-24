@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/pubsub/awssnssqs
+title: github.com/kainoaseto/go-cloud/pubsub/awssnssqs
 type: pkg
 ---

@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/pubsub/drivertest
+title: github.com/kainoaseto/go-cloud/pubsub/drivertest
 type: pkg
 ---

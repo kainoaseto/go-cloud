@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/docstore/mongodocstore
+module github.com/kainoaseto/go-cloud/docstore/mongodocstore
 
 go 1.12
 
@@ -22,11 +22,11 @@ require (
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/google/go-cmp v0.3.0
 	github.com/google/wire v0.3.0
+	github.com/kainoaseto/go-cloud v0.18.0
 	github.com/tidwall/pretty v1.0.0 // indirect
 	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c // indirect
 	github.com/xdg/stringprep v1.0.0 // indirect
 	go.mongodb.org/mongo-driver v1.1.3
-	gocloud.dev v0.18.0
 	golang.org/x/crypto v0.0.0-20191112222119-e1110fd1c708 // indirect
 	golang.org/x/net v0.0.0-20191112182307-2180aed22343 // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
@@ -36,4 +36,4 @@ require (
 	google.golang.org/grpc v1.25.1 // indirect
 )
 
-replace gocloud.dev => ../../
+replace github.com/kainoaseto/go-cloud => ../../

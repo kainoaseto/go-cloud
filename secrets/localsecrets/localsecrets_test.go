@@ -21,9 +21,9 @@ import (
 	"strings"
 	"testing"
 
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/driver"
-	"gocloud.dev/secrets/drivertest"
+	"github.com/kainoaseto/go-cloud/secrets"
+	"github.com/kainoaseto/go-cloud/secrets/driver"
+	"github.com/kainoaseto/go-cloud/secrets/drivertest"
 )
 
 type harness struct{}

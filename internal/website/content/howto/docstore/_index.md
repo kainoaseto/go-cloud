@@ -25,8 +25,8 @@ including Cloud and on-prem solutions. You can develop your application
 locally using [`memdocstore`][], then deploy it to multiple Cloud providers with
 minimal initialization reconfiguration.
 
-[`docstore` package]: https://godoc.org/gocloud.dev/docstore
-[`memdocstore`]: https://godoc.org/gocloud.dev/docstore/memdocstore
+[`docstore` package]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore
+[`memdocstore`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/memdocstore
 
 ## Opening a Collection {#opening}
 
@@ -45,8 +45,8 @@ the driver package to link it in.
 
 ```go
 import (
-    "gocloud.dev/docstore"
-    _ "gocloud.dev/docstore/<driver>"
+    "github.com/kainoaseto/go-cloud/docstore"
+    _ "github.com/kainoaseto/go-cloud/docstore/<driver>"
 )
 ...
 coll, err := docstore.OpenCollection(context.Background(), "<driver-url>")
@@ -66,7 +66,7 @@ fine-grained control over the connection settings, you can call the constructor
 function in the driver package directly (like `mongodocstore.OpenCollection`).
 
 ```go
-import "gocloud.dev/docstore/<driver>"
+import "github.com/kainoaseto/go-cloud/docstore/<driver>"
 ...
 coll, err := <driver>.OpenCollection(...)
 ...
@@ -77,9 +77,9 @@ when switching between different backing services.
 
 See the [guide below][] for constructor usage for each supported service
 
-[`*docstore.Collection`]: https://godoc.org/gocloud.dev/docstore#Collection
+[`*docstore.Collection`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore#Collection
 [`docstore.OpenCollection`]:
-https://godoc.org/gocloud.dev/docstore#OpenCollection
+https://godoc.org/github.com/kainoaseto/go-cloud/docstore#OpenCollection
 ["blank import"]: https://golang.org/doc/effective_go.html#blank_import
 [Concepts: URLs]: {{< ref "/concepts/urls.md" >}}
 [guide below]: {{< ref "#services" >}}
@@ -101,7 +101,7 @@ type Player struct {
 
 We recommend using structs for documents because they impose some structure on
 your data, but Docstore also accepts `map[string]interface{}` values. See
-[the `docstore` package documentation](https://godoc.org/gocloud.dev/docstore#hdr-Documents)
+[the `docstore` package documentation](https://godoc.org/github.com/kainoaseto/go-cloud/docstore#hdr-Documents)
 for more information.
 
 The `DocstoreRevision` field holds information about the latest revision of the
@@ -140,13 +140,13 @@ optimize action lists by using bulk RPCs, running the actions concurrently,
 or employing a provider's special features to improve efficiency and reduce
 cost. Here we create several documents using an action list.
 
-{{< goexample "gocloud.dev/docstore.ExampleCollection_Actions_bulkWrite" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore.ExampleCollection_Actions_bulkWrite" >}}
 
 `ActionList` has a fluent API, so you can build and execute a sequence of
 actions in one line of code. Here we `Put` a document and immediately `Get` its
 new contents.
 
-{{< goexample "gocloud.dev/docstore.ExampleCollection_Actions_getAfterWrite" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore.ExampleCollection_Actions_getAfterWrite" >}}
 
 If the underlying provider is eventually consistent, the result of the `Get`
 might not reflect the `Put`. Docstore only guarantees that it will perform the
@@ -155,7 +155,7 @@ might not reflect the `Put`. Docstore only guarantees that it will perform the
 See the documentation for [`docstore.ActionList`][] for the semantics of action
 list execution.
 
-[`docstore.ActionList`]: https://godoc.org/gocloud.dev/docstore#ActionList
+[`docstore.ActionList`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore#ActionList
 
 #### Updates {#act-update}
 
@@ -163,7 +163,7 @@ Use `Update` to modify individual fields of a document. The `Update` action
 takes a set of modifications to document fields, and applies them all
 atomically. You can change the value of a field, increment it, or delete it.
 
-{{< goexample "gocloud.dev/docstore.ExampleCollection_Update" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore.ExampleCollection_Update" >}}
 
 ### Queries {#queries}
 
@@ -193,7 +193,7 @@ err := iter.Next(ctx, doc)
 
 The iteration is over when `Next` returns `io.EOF`.
 
-{{< goexample "gocloud.dev/docstore.ExampleQuery_Get" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore.ExampleQuery_Get" >}}
 
 You can pass a list of fields to `Get` to reduce the amount of data transmitted.
 
@@ -229,23 +229,23 @@ a document atomically:
     instead of overwriting the document.
 4.  If the `Replace` failed, start again from step 1.
 
-{{< goexample "gocloud.dev/docstore.Example_optimisticLocking" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore.Example_optimisticLocking" >}}
 
 See
-[the Revisions section of the package documentation](https://godoc.org/gocloud.dev/docstore#hdr-Revisions)
+[the Revisions section of the package documentation](https://godoc.org/github.com/kainoaseto/go-cloud/docstore#hdr-Revisions)
 for more on revisions.
 
 ## Other Usage Samples
 
 * [CLI Sample](https://github.com/google/go-cloud/tree/master/samples/gocdk-docstore)
-* [Order Processor sample](https://gocloud.dev/tutorials/order/)
-* [docstore package examples](https://godoc.org/gocloud.dev/docstore#pkg-examples)
+* [Order Processor sample](https://github.com/kainoaseto/go-cloud/tutorials/order/)
+* [docstore package examples](https://godoc.org/github.com/kainoaseto/go-cloud/docstore#pkg-examples)
 
 ## Supported Docstore Services {#services}
 
 ### Google Cloud Firestore {#firestore}
 
-The [`gcpfirestore`](https://godoc.org/gocloud.dev/docstore/gcpfirestore)
+The [`gcpfirestore`](https://godoc.org/github.com/kainoaseto/go-cloud/docstore/gcpfirestore)
 package supports
 [Google Cloud Firestore](https://cloud.google.com/firestore). Firestore
 documents are uniquely named by paths that are not part of the document content.
@@ -266,12 +266,12 @@ alternatives, including using environment variables.
 [`gcloud auth login`]: https://cloud.google.com/sdk/gcloud/reference/auth/login
 
 {{< goexample
-"gocloud.dev/docstore/gcpfirestore.Example_openCollectionFromURL" >}}
+"github.com/kainoaseto/go-cloud/docstore/gcpfirestore.Example_openCollectionFromURL" >}}
 
 Full details about acceptable URLs can be found under the API reference for
 [`gcpfirestore.URLOpener`][].
 
-[`gcpfirestore.URLOpener`]:  https://godoc.org/gocloud.dev/docstore/gcpfirestore#URLOpener
+[`gcpfirestore.URLOpener`]:  https://godoc.org/github.com/kainoaseto/go-cloud/docstore/gcpfirestore#URLOpener
 
 #### Firestore Constructors {#firestore-ctor}
 
@@ -283,7 +283,7 @@ package. In addition to a client, `OpenCollection` requires a Google Cloud
 project ID, the path to the Firestore collection, and the name of the field that
 holds the document name.
 
-{{< goexample "gocloud.dev/docstore/gcpfirestore.ExampleOpenCollection" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore/gcpfirestore.ExampleOpenCollection" >}}
 
 Instead of mapping the document name to a field, you can supply a function to
 construct the name from the document contents with
@@ -291,15 +291,15 @@ construct the name from the document contents with
 whose name is the combination of two or more fields.
 
 {{< goexample
-"gocloud.dev/docstore/gcpfirestore.ExampleOpenCollectionWithNameFunc" >}}
+"github.com/kainoaseto/go-cloud/docstore/gcpfirestore.ExampleOpenCollectionWithNameFunc" >}}
 
-[`gcpfirestore.Dial`]: https://godoc.org/gocloud.dev/docstore/gcpfirestore#Dial
-[`gcpfirestore.OpenCollection`]: https://godoc.org/gocloud.dev/docstore/gcpfirestore#OpenCollection
-[`gcpfirestore.OpenCollectionWithNameFunc`]: https://godoc.org/gocloud.dev/docstore/gcpfirestore#OpenCollectionWithNameFunc
+[`gcpfirestore.Dial`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/gcpfirestore#Dial
+[`gcpfirestore.OpenCollection`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/gcpfirestore#OpenCollection
+[`gcpfirestore.OpenCollectionWithNameFunc`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/gcpfirestore#OpenCollectionWithNameFunc
 
 ### Amazon DynamoDB {#dynamodb}
 
-The [`awsdynamodb`](https://godoc.org/gocloud.dev/docstore/awsdynamodb) package
+The [`awsdynamodb`](https://godoc.org/github.com/kainoaseto/go-cloud/docstore/awsdynamodb) package
 supports [Amazon DynamoDB](https://aws.amazon.com/dynamodb). A Docstore
 collection corresponds to a DynamoDB table.
 
@@ -314,7 +314,7 @@ alternatives, including using environment variables.
 [AWS Session]: https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
 
 {{< goexample
-"gocloud.dev/docstore/awsdynamodb.Example_openCollectionFromURL" >}}
+"github.com/kainoaseto/go-cloud/docstore/awsdynamodb.Example_openCollectionFromURL" >}}
 
 Full details about acceptable URLs can be found under the API reference for
 [`awsdynamodb.URLOpener`][].
@@ -325,11 +325,11 @@ The [`awsdynamodb.OpenCollection`][] constructor opens a DynamoDB table as a
 Docstore collection. You must first create an [AWS session][] with the same
 region as your collection:
 
-{{< goexample "gocloud.dev/docstore/awsdynamodb.ExampleOpenCollection" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore/awsdynamodb.ExampleOpenCollection" >}}
 
 [AWS session]: https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
-[`awsdynamodb.OpenCollection`]: https://godoc.org/gocloud.dev/docstore/awsdynamodb#OpenCollection
-[`awsdynamodb.URLOpener`]: https://godoc.org/gocloud.dev/docstore/awsdynamodb#URLOpener
+[`awsdynamodb.OpenCollection`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/awsdynamodb#OpenCollection
+[`awsdynamodb.URLOpener`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/awsdynamodb#URLOpener
 
 ### Azure Cosmos DB {#cosmosdb}
 
@@ -369,12 +369,12 @@ holds the document ID. Specify the Mongo server URL by setting the
 `MONGO_SERVER_URL` environment variable.
 
 {{< goexample
-"gocloud.dev/docstore/mongodocstore.Example_openCollectionFromURL" >}}
+"github.com/kainoaseto/go-cloud/docstore/mongodocstore.Example_openCollectionFromURL" >}}
 
 Full details about acceptable URLs can be found under the API reference for
 [`mongodocstore.URLOpener`][].
 
-[`mongodocstore.URLOpener`]:  https://godoc.org/gocloud.dev/docstore/mongodocstore#URLOpener
+[`mongodocstore.URLOpener`]:  https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore#URLOpener
 
 #### MongoDB Constructors {#mongo-ctor}
 
@@ -387,7 +387,7 @@ Obtain a `*mongo.Collection` from the client with
 `mongodocstore.OpenCollection` along with the name of the ID field, or `""` to
 use `_id`.
 
-{{< goexample "gocloud.dev/docstore/mongodocstore.ExampleOpenCollection" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore/mongodocstore.ExampleOpenCollection" >}}
 
 Instead of mapping the document ID to a field, you can supply a function to
 construct the ID from the document contents with
@@ -395,16 +395,16 @@ construct the ID from the document contents with
 whose name is the combination of two or more fields.
 
 {{< goexample
-"gocloud.dev/docstore/mongodocstore.ExampleOpenCollectionWithIDFunc" >}}
+"github.com/kainoaseto/go-cloud/docstore/mongodocstore.ExampleOpenCollectionWithIDFunc" >}}
 
-[`mongodocstore`]: https://godoc.org/gocloud.dev/docstore/mongodocstore
-[`mongodocstore.Dial`]: https://godoc.org/gocloud.dev/docstore/mongodocstore#Dial
-[`mongodocstore.OpenCollection`]: https://godoc.org/gocloud.dev/docstore/mongodocstore#OpenCollection
-[`mongodocstore.OpenCollectionWithIDFunc`]: https://godoc.org/gocloud.dev/docstore/mongodocstore#OpenCollectionWithIDFunc
+[`mongodocstore`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore
+[`mongodocstore.Dial`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore#Dial
+[`mongodocstore.OpenCollection`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore#OpenCollection
+[`mongodocstore.OpenCollectionWithIDFunc`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore#OpenCollectionWithIDFunc
 
 ### In-Memory Document Store {#mem}
 
-The [`memdocstore`](https://godoc.org/gocloud.dev/docstore/mongodocstore)
+The [`memdocstore`](https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore)
 package implements an in-memory document store suitable for testing and
 development.
 
@@ -413,26 +413,26 @@ the collection name, and the URL path is used as the name of the document field
 to use as a primary key.
 
 {{< goexample
-"gocloud.dev/docstore/memdocstore.Example_openCollectionFromURL" >}}
+"github.com/kainoaseto/go-cloud/docstore/memdocstore.Example_openCollectionFromURL" >}}
 
 Full details about acceptable URLs can be found under the API reference for
 [`memdocstore.URLOpener`][].
 
-[`memdocstore.URLOpener`]:  https://godoc.org/gocloud.dev/docstore/memdocstore#URLOpener
+[`memdocstore.URLOpener`]:  https://godoc.org/github.com/kainoaseto/go-cloud/docstore/memdocstore#URLOpener
 
 #### Mem Constructors {#mem-ctor}
 
 The [`memdocstore.OpenCollection`][] constructor creates and opens a collection,
 taking the name of the key field.
 
-{{< goexample "gocloud.dev/docstore/memdocstore.ExampleOpenCollection" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/docstore/memdocstore.ExampleOpenCollection" >}}
 
 You can instead supply a function to construct the primary key from the document
 contents with [`memdocstore.OpenCollectionWithKeyFunc`][]. This can be useful
 for documents whose name is the combination of two or more fields.
 
 {{< goexample
-"gocloud.dev/docstore/memdocstore.ExampleOpenCollectionWithKeyFunc" >}}
+"github.com/kainoaseto/go-cloud/docstore/memdocstore.ExampleOpenCollectionWithKeyFunc" >}}
 
-[`memdocstore.OpenCollection`]: https://godoc.org/gocloud.dev/docstore/memdocstore#OpenCollection
-[`memdocstore.OpenCollectionWithKeyFunc`]: https://godoc.org/gocloud.dev/docstore/memdocstore#OpenCollectionWithKeyFunc
+[`memdocstore.OpenCollection`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/memdocstore#OpenCollection
+[`memdocstore.OpenCollectionWithKeyFunc`]: https://godoc.org/github.com/kainoaseto/go-cloud/docstore/memdocstore#OpenCollectionWithKeyFunc

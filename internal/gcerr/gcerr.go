@@ -21,7 +21,7 @@ import (
 	"io"
 	"reflect"
 
-	"gocloud.dev/internal/retry"
+	"github.com/kainoaseto/go-cloud/internal/retry"
 	"golang.org/x/xerrors"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

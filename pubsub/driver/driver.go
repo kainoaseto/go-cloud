@@ -15,12 +15,12 @@
 // Package driver defines interfaces to be implemented by pubsub drivers, which
 // will be used by the pubsub package to interact with the underlying services.
 // Application code should use package pubsub.
-package driver // import "gocloud.dev/pubsub/driver"
+package driver // import "github.com/kainoaseto/go-cloud/pubsub/driver"
 
 import (
 	"context"
 
-	"gocloud.dev/gcerrors"
+	"github.com/kainoaseto/go-cloud/gcerrors"
 )
 
 // AckID is the identifier of a message for purposes of acknowledgement.
@@ -60,7 +60,7 @@ type Message struct {
 	// The callback must be called exactly once, before the message is sent.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	BeforeSend func(asFunc func(interface{}) bool) error
 }
 
@@ -97,11 +97,11 @@ type Topic interface {
 	IsRetryable(err error) bool
 
 	// As allows drivers to expose driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	As(i interface{}) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for errors.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	ErrorAs(error, interface{}) bool
 
 	// ErrorCode should return a code that describes the error, which was returned by
@@ -181,11 +181,11 @@ type Subscription interface {
 	IsRetryable(err error) bool
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	As(i interface{}) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for errors.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	ErrorAs(error, interface{}) bool
 
 	// ErrorCode should return a code that describes the error, which was returned by

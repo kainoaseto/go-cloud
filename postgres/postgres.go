@@ -22,7 +22,7 @@ import (
 	"net/url"
 
 	"github.com/lib/pq"
-	"gocloud.dev/internal/openurl"
+	"github.com/kainoaseto/go-cloud/internal/openurl"
 
 	"contrib.go.opencensus.io/integrations/ocsql"
 )

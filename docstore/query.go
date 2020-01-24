@@ -20,8 +20,8 @@ import (
 	"reflect"
 	"time"
 
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/docstore/driver"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
 )
 
 // Query represents a query over a collection.
@@ -143,7 +143,7 @@ func (q *Query) OrderBy(field, direction string) *Query {
 // BeforeQuery takes a callback function that will be called before the Query is
 // executed to the underlying service's query functionality. The callback takes
 // a parameter, asFunc, that converts its argument to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 func (q *Query) BeforeQuery(f func(asFunc func(interface{}) bool) error) *Query {
 	q.dq.BeforeQuery = f
 	return q
@@ -246,7 +246,7 @@ func (it *DocumentIterator) Stop() {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (it *DocumentIterator) As(i interface{}) bool {

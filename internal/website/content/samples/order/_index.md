@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/order
+title: github.com/kainoaseto/go-cloud/samples/order
 type: pkg
 ---

@@ -23,8 +23,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package awspostgres // import "gocloud.dev/postgres/awspostgres"
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
+package awspostgres // import "github.com/kainoaseto/go-cloud/postgres/awspostgres"
 
 import (
 	"context"
@@ -39,8 +39,8 @@ import (
 
 	"contrib.go.opencensus.io/integrations/ocsql"
 	"github.com/lib/pq"
-	"gocloud.dev/aws/rds"
-	"gocloud.dev/postgres"
+	"github.com/kainoaseto/go-cloud/aws/rds"
+	"github.com/kainoaseto/go-cloud/postgres"
 )
 
 // URLOpener opens RDS PostgreSQL URLs

@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/docstore/drivertest"
+	"github.com/kainoaseto/go-cloud/docstore/drivertest"
 )
 
 type aStruct struct {

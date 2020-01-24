@@ -1,8 +1,8 @@
-# gocloud.dev source
+# github.com/kainoaseto/go-cloud source
 
-Source for the [gocloud.dev website][]. Powered by [Hugo][].
+Source for the [github.com/kainoaseto/go-cloud website][]. Powered by [Hugo][].
 
-[gocloud.dev website]: https://gocloud.dev/
+[github.com/kainoaseto/go-cloud website]: https://github.com/kainoaseto/go-cloud/
 [Hugo]: https://gohugo.io/
 
 ## Local Development

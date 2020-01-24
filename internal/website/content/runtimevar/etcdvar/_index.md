@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/runtimevar/etcdvar
+title: github.com/kainoaseto/go-cloud/runtimevar/etcdvar
 type: pkg
 ---

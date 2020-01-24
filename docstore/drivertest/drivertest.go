@@ -14,7 +14,7 @@
 
 // Package drivertest provides a conformance test for implementations of
 // driver.
-package drivertest // import "gocloud.dev/docstore/drivertest"
+package drivertest // import "github.com/kainoaseto/go-cloud/docstore/drivertest"
 
 import (
 	"context"
@@ -29,10 +29,10 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"gocloud.dev/docstore"
-	ds "gocloud.dev/docstore"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcerrors"
+	"github.com/kainoaseto/go-cloud/docstore"
+	ds "github.com/kainoaseto/go-cloud/docstore"
+	"github.com/kainoaseto/go-cloud/docstore/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
 )
 
 // CollectionKind describes the kind of testing collection to create.

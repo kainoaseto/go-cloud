@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/secrets/vault
+title: github.com/kainoaseto/go-cloud/secrets/vault
 type: pkg
 ---

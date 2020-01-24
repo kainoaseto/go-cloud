@@ -16,17 +16,17 @@ The Go CDK Server constructor takes an `http.Handler` and an `Options` struct.
 The simplest way to start the server is to use `http.DefaultServeMux` and
 pass `nil` for the options.
 
-{{< goexample src="gocloud.dev/server.ExampleServer_New" >}}
+{{< goexample src="github.com/kainoaseto/go-cloud/server.ExampleServer_New" >}}
 
 ### Adding a request logger
 
 You can use the `server.Options` struct to specify a request logger.
 
-The example is shown with the Go CDK [`requestlog`](https://godoc.org/gocloud.dev/server/requestlog) package's `NCSALogger`.
+The example is shown with the Go CDK [`requestlog`](https://godoc.org/github.com/kainoaseto/go-cloud/server/requestlog) package's `NCSALogger`.
 To get logs in the Stackdriver JSON format, use `NewStackdriverLogger` in place
 of `NewNCSALogger`.
 
-{{< goexample src="gocloud.dev/server.ExampleServer_RequestLogger" >}}
+{{< goexample src="github.com/kainoaseto/go-cloud/server.ExampleServer_RequestLogger" >}}
 
 ### Adding health checks
 
@@ -64,9 +64,9 @@ func (h *customHealthCheck) CheckHealth() error {
 }
 ```
 
-{{< goexample src="gocloud.dev/server.ExampleServer_HealthChecks" >}}
+{{< goexample src="github.com/kainoaseto/go-cloud/server.ExampleServer_HealthChecks" >}}
 
 ## Other Usage Samples
 
 * [Minimal server sample](https://github.com/google/go-cloud/tree/master/samples/server)
-* [Guestbook sample](https://gocloud.dev/tutorials/guestbook/)
+* [Guestbook sample](https://github.com/kainoaseto/go-cloud/tutorials/guestbook/)

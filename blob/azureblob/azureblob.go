@@ -33,7 +33,7 @@
 // the proper blob storage domain name to provide.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // Escaping
 //
@@ -82,13 +82,13 @@ import (
 	"github.com/Azure/azure-storage-blob-go/azblob"
 	"github.com/google/uuid"
 	"github.com/google/wire"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
 
-	"gocloud.dev/internal/escape"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
+	"github.com/kainoaseto/go-cloud/internal/escape"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/useragent"
 )
 
 // Options sets options for constructing a *blob.Bucket backed by Azure Block Blob.

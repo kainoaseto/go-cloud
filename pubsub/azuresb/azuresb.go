@@ -24,7 +24,7 @@
 // the environment variable "SERVICEBUS_CONNECTION_STRING".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // Message Delivery Semantics
 //
@@ -39,7 +39,7 @@
 // no-op, pubsub.Message.Nackable will return false, and pubsub.Message.Nack
 // will panic.
 //
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // As
@@ -50,7 +50,7 @@
 //  - Message.BeforeSend: *servicebus.Message
 //  - Message: *servicebus.Message
 //  - Error: common.Retryable
-package azuresb // import "gocloud.dev/pubsub/azuresb"
+package azuresb // import "github.com/kainoaseto/go-cloud/pubsub/azuresb"
 
 import (
 	"context"
@@ -69,11 +69,11 @@ import (
 	"github.com/Azure/azure-amqp-common-go/v2/rpc"
 	"github.com/Azure/azure-amqp-common-go/v2/uuid"
 	servicebus "github.com/Azure/azure-service-bus-go"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/batcher"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/batcher"
+	"github.com/kainoaseto/go-cloud/internal/useragent"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/driver"
 	"pack.ag/amqp"
 )
 

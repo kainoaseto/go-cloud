@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/gocdk-runtimevar
+title: github.com/kainoaseto/go-cloud/samples/gocdk-runtimevar
 type: pkg
 ---

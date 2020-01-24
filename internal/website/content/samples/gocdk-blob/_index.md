@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/gocdk-blob
+title: github.com/kainoaseto/go-cloud/samples/gocdk-blob
 type: pkg
 ---

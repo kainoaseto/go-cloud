@@ -15,7 +15,7 @@
 // Package driver defines interfaces to be implemented by blob drivers, which
 // will be used by the blob package to interact with the underlying services.
 // Application code should use package blob.
-package driver // import "gocloud.dev/blob/driver"
+package driver // import "github.com/kainoaseto/go-cloud/blob/driver"
 
 import (
 	"context"
@@ -24,7 +24,7 @@ import (
 	"strings"
 	"time"
 
-	"gocloud.dev/gcerrors"
+	"github.com/kainoaseto/go-cloud/gcerrors"
 )
 
 // ReaderOptions controls Reader behaviors.
@@ -227,12 +227,12 @@ type Bucket interface {
 	ErrorCode(error) gcerrors.ErrorCode
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	As(i interface{}) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for returned
 	// errors.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	ErrorAs(error, interface{}) bool
 
 	// Attributes returns attributes for the blob. If the specified object does

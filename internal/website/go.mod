@@ -1,4 +1,4 @@
-module gocloud.dev/internal/website
+module github.com/kainoaseto/go-cloud/internal/website
 
 go 1.12
 

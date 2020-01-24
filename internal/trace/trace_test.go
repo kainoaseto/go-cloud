@@ -20,8 +20,8 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	octrace "go.opencensus.io/trace"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
 )
 
 func TestToStatus(t *testing.T) {

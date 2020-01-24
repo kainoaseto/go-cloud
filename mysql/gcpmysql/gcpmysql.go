@@ -24,8 +24,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package gcpmysql // import "gocloud.dev/mysql/gcpmysql"
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
+package gcpmysql // import "github.com/kainoaseto/go-cloud/mysql/gcpmysql"
 
 import (
 	"context"
@@ -39,9 +39,9 @@ import (
 	"contrib.go.opencensus.io/integrations/ocsql"
 	"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/proxy"
 	"github.com/go-sql-driver/mysql"
-	"gocloud.dev/gcp"
-	"gocloud.dev/gcp/cloudsql"
-	cdkmysql "gocloud.dev/mysql"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/gcp/cloudsql"
+	cdkmysql "github.com/kainoaseto/go-cloud/mysql"
 )
 
 // Scheme is the URL scheme gcpmysql registers its URLOpener under on
@@ -109,7 +109,7 @@ func (uo *URLOpener) OpenMySQLURL(ctx context.Context, u *url.URL) (*sql.DB, err
 		Port:  3307,
 		Certs: uo.CertSource,
 	}
-	dialerName := fmt.Sprintf("gocloud.dev/mysql/gcpmysql/%d", dialerNum)
+	dialerName := fmt.Sprintf("github.com/kainoaseto/go-cloud/mysql/gcpmysql/%d", dialerNum)
 	mysql.RegisterDial(dialerName, client.Dial)
 
 	password, _ := u.User.Password()

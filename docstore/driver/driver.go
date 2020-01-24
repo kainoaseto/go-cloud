@@ -15,12 +15,12 @@
 // Package driver defines interfaces to be implemented by docstore drivers, which
 // will be used by the docstore package to interact with the underlying services.
 // Application code should use package docstore.
-package driver // import "gocloud.dev/docstore/driver"
+package driver // import "github.com/kainoaseto/go-cloud/docstore/driver"
 
 import (
 	"context"
 
-	"gocloud.dev/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
 )
 
 // A Collection is a set of documents.
@@ -77,13 +77,13 @@ type Collection interface {
 	BytesToRevision([]byte) (interface{}, error)
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	As(i interface{}) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for returned
 	// errors.
 	//
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	ErrorAs(err error, i interface{}) bool
 
 	// ErrorCode should return a code that describes the error, which was returned by
@@ -232,7 +232,7 @@ type DocumentIterator interface {
 	Stop()
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	As(i interface{}) bool
 }
 

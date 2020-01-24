@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/secrets
+title: github.com/kainoaseto/go-cloud/secrets
 type: pkg
 ---

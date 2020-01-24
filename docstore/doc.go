@@ -16,7 +16,7 @@
 // Subpackages contain driver implementations of docstore for supported
 // services.
 //
-// See https://gocloud.dev/howto/docstore/ for a detailed how-to guide.
+// See https://github.com/kainoaseto/go-cloud/howto/docstore/ for a detailed how-to guide.
 //
 //
 // Collections
@@ -185,7 +185,7 @@
 // When you pass a document with a non-nil revision to Put, Replace, Update or
 // Delete, Docstore will also compare the revision of the stored document to
 // that of the given document before making the change. It returns an error with
-// code FailedPrecondition on mismatch. (See https://gocloud.dev/gcerrors for
+// code FailedPrecondition on mismatch. (See https://github.com/kainoaseto/go-cloud/gcerrors for
 // information about error codes.) If modification methods are called on a
 // document struct or map a nil revision field, then no revision checks are
 // performed, and changes are forced blindly, but a new revision will still be
@@ -247,7 +247,7 @@
 //
 // The errors returned from this package can be inspected in several ways:
 //
-// The Code function from https://gocloud.dev/gcerrors will return an error code, also
+// The Code function from https://github.com/kainoaseto/go-cloud/gcerrors will return an error code, also
 // defined in that package, when invoked on an error.
 //
 // The Collection.ErrorAs method can retrieve the underlying driver error from
@@ -265,14 +265,14 @@
 //  - Query.Get (for the first query only; drivers may make additional calls while iterating over results)
 // All trace and metric names begin with the package import path.
 // The traces add the method name.
-// For example, "gocloud.dev/docstore/ActionList.Do".
+// For example, "github.com/kainoaseto/go-cloud/docstore/ActionList.Do".
 // The metrics are "completed_calls", a count of completed method calls by driver,
 // method and status (error code); and "latency", a distribution of method latency
 // by driver and method.
-// For example, "gocloud.dev/docstore/latency".
+// For example, "github.com/kainoaseto/go-cloud/docstore/latency".
 //
 // To enable trace collection in your application, see "Configure Exporter" at
 // https://opencensus.io/quickstart/go/tracing.
 // To enable metric collection in your application, see "Exporting stats" at
 // https://opencensus.io/quickstart/go/metrics.
-package docstore // import "gocloud.dev/docstore"
+package docstore // import "github.com/kainoaseto/go-cloud/docstore"

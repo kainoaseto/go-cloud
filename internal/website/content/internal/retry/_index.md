@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/retry
+title: github.com/kainoaseto/go-cloud/internal/retry
 type: pkg
 ---

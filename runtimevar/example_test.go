@@ -19,18 +19,18 @@ import (
 	"fmt"
 	"log"
 
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/constantvar"
-	"gocloud.dev/secrets"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/constantvar"
+	"github.com/kainoaseto/go-cloud/secrets"
 
-	_ "gocloud.dev/runtimevar/gcpruntimeconfig"
+	_ "github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig"
 	runtimeconfig "google.golang.org/genproto/googleapis/cloud/runtimeconfig/v1beta1"
 	"google.golang.org/grpc/status"
 )
 
 func Example_jsonDecoder() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Config is the sample config struct we're going to parse our JSON into.
@@ -40,7 +40,7 @@ func Example_jsonDecoder() {
 	}
 
 	// A sample JSON config that will decode into Config.
-	const jsonConfig = `{"Host": "gocloud.dev", "Port": 8080}`
+	const jsonConfig = `{"Host": "github.com/kainoaseto/go-cloud", "Port": 8080}`
 
 	// Construct a Decoder that decodes raw bytes into our config.
 	decoder := runtimevar.NewDecoder(Config{}, runtimevar.JSONDecode)
@@ -53,7 +53,7 @@ func Example_jsonDecoder() {
 	defer v.Close()
 	// snapshot.Value will be of type Config.
 
-	// PRAGMA: On gocloud.dev, hide the rest of the function.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide the rest of the function.
 	snapshot, err := v.Latest(ctx)
 	if err != nil {
 		log.Fatalf("Error in retrieving variable: %v", err)
@@ -61,7 +61,7 @@ func Example_jsonDecoder() {
 	fmt.Printf("Config: %+v\n", snapshot.Value.(Config))
 
 	// Output:
-	// Config: {Host:gocloud.dev Port:8080}
+	// Config: {Host:github.com/kainoaseto/go-cloud Port:8080}
 }
 
 func Example_stringDecoder() {
@@ -84,15 +84,15 @@ func Example_stringDecoder() {
 }
 
 func ExampleVariable_Latest() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	var v *runtimevar.Variable
 
 	snapshot, err := v.Latest(context.Background())
 	if err != nil {
 		log.Fatalf("Error in retrieving variable: %v", err)
 	}
-	// PRAGMA: On gocloud.dev, hide the rest of the function.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide the rest of the function.
 	_ = snapshot
 }
 
@@ -101,7 +101,7 @@ func ExampleSnapshot_As() {
 	// demonstrates access to the underlying
 	// google.golang.org/genproto/googleapis/cloud/runtimeconfig.Variable type.
 	// The types exposed for As by gcpruntimeconfig are documented in
-	// https://godoc.org/gocloud.dev/runtimevar/gcpruntimeconfig#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig#hdr-As
 	ctx := context.Background()
 
 	const url = "gcpruntimeconfig://proj/config/key"
@@ -126,7 +126,7 @@ func ExampleVariable_ErrorAs() {
 	// demonstrates access to the underlying google.golang.org/grpc/status.Status
 	// type.
 	// The types exposed for As by gcpruntimeconfig are documented in
-	// https://godoc.org/gocloud.dev/runtimevar/gcpruntimeconfig#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig#hdr-As
 	ctx := context.Background()
 
 	const url = "gcpruntimeconfig://proj/wrongconfig/key"
@@ -179,13 +179,13 @@ func ExampleVariable_Watch() {
 }
 
 func ExampleDecryptDecode() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	var keeper *secrets.Keeper
 
 	decodeFunc := runtimevar.DecryptDecode(keeper, runtimevar.StringDecode)
 	decoder := runtimevar.NewDecoder("", decodeFunc)
 
-	// PRAGMA: On gocloud.dev, hide the rest of the function.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide the rest of the function.
 	_ = decoder
 }

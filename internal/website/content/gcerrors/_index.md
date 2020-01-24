@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/gcerrors
+title: github.com/kainoaseto/go-cloud/gcerrors
 type: pkg
 ---

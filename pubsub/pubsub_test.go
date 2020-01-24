@@ -24,13 +24,13 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/batcher"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/testing/octest"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
-	"gocloud.dev/pubsub/mempubsub"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/batcher"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/testing/octest"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/driver"
+	"github.com/kainoaseto/go-cloud/pubsub/mempubsub"
 )
 
 type driverTopic struct {
@@ -485,7 +485,7 @@ func TestOpenCensus(t *testing.T) {
 	}
 	_, _ = sub.Receive(ctx)
 
-	diff := octest.Diff(te.Spans(), te.Counts(), "gocloud.dev/pubsub", "gocloud.dev/pubsub/mempubsub", []octest.Call{
+	diff := octest.Diff(te.Spans(), te.Counts(), "github.com/kainoaseto/go-cloud/pubsub", "github.com/kainoaseto/go-cloud/pubsub/mempubsub", []octest.Call{
 		{Method: "driver.Topic.SendBatch", Code: gcerrors.OK},
 		{Method: "Topic.Send", Code: gcerrors.OK},
 		{Method: "Topic.Shutdown", Code: gcerrors.OK},

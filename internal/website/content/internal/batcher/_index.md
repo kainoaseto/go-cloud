@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/batcher
+title: github.com/kainoaseto/go-cloud/internal/batcher
 type: pkg
 ---

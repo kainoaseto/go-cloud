@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/runtimevar/driver
+title: github.com/kainoaseto/go-cloud/runtimevar/driver
 type: pkg
 ---

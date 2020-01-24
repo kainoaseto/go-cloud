@@ -23,12 +23,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/fileblob"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/fileblob"
 )
 
 func ExampleOpenBucket() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
 
 	// The directory you pass to fileblob.OpenBucket must exist first.
 	const myDir = "path/to/local/directory"

@@ -58,7 +58,7 @@ talk at Next 2018:
 ```shell
 # First "cd" into your project directory if you have one to ensure "go get" uses
 # Go modules (or not) appropriately. See "go help modules" for more info.
-go get gocloud.dev
+go get github.com/kainoaseto/go-cloud
 ```
 
 The Go CDK builds at the latest stable release of Go. Previous Go versions may
@@ -66,12 +66,12 @@ compile but are not supported.
 
 ## Documentation
 
-Documentation for the project lives primarily on https://gocloud.dev/, including
+Documentation for the project lives primarily on https://github.com/kainoaseto/go-cloud/, including
 [tutorials][].
 
 You can also browse Go package reference on [godoc.org][godoc].
 
-[tutorials]: https://gocloud.dev/tutorials/
+[tutorials]: https://github.com/kainoaseto/go-cloud/tutorials/
 
 ## Project status
 

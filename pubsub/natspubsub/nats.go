@@ -25,13 +25,13 @@
 // environment variable "NATS_SERVER_URL".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // Message Delivery Semantics
 //
 // NATS supports at-most-semantics; applications need not call Message.Ack,
 // and must not call Message.Nack.
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // As
@@ -41,7 +41,7 @@
 //  - Subscription: *nats.Subscription
 //  - Message.BeforeSend: None.
 //  - Message: *nats.Msg
-package natspubsub // import "gocloud.dev/pubsub/natspubsub"
+package natspubsub // import "github.com/kainoaseto/go-cloud/pubsub/natspubsub"
 
 import (
 	"bytes"
@@ -56,10 +56,10 @@ import (
 	"time"
 
 	"github.com/nats-io/nats.go"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/batcher"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/batcher"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/driver"
 )
 
 var errNotInitialized = errors.New("natspubsub: topic not initialized")

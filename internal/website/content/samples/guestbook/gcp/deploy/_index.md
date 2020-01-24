@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/guestbook/gcp/deploy
+title: github.com/kainoaseto/go-cloud/samples/guestbook/gcp/deploy
 type: pkg
 ---

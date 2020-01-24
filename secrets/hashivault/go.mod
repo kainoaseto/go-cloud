@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/secrets/hashivault
+module github.com/kainoaseto/go-cloud/secrets/hashivault
 
 go 1.12
 
 require (
 	github.com/hashicorp/vault/api v1.0.2
-	gocloud.dev v0.18.0
+	github.com/kainoaseto/go-cloud v0.18.0
 )
 
-replace gocloud.dev => ../../
+replace github.com/kainoaseto/go-cloud => ../../

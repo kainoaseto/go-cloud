@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/mysql
+title: github.com/kainoaseto/go-cloud/mysql
 type: pkg
 ---

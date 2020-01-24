@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/docstore/dynamodocstore
+title: github.com/kainoaseto/go-cloud/docstore/dynamodocstore
 type: pkg
 ---

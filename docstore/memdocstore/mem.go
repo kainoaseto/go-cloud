@@ -34,8 +34,8 @@
 // "mem".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
-package memdocstore // import "gocloud.dev/docstore/memdocstore"
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
+package memdocstore // import "github.com/kainoaseto/go-cloud/docstore/memdocstore"
 
 import (
 	"context"
@@ -48,10 +48,10 @@ import (
 	"strings"
 	"sync"
 
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/docstore"
+	"github.com/kainoaseto/go-cloud/docstore/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
 )
 
 // Options are optional arguments to the OpenCollection functions.

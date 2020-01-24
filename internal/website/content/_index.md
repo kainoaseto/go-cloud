@@ -30,7 +30,7 @@ page](https://github.com/google/go-cloud).
 To start using the Go CDK, install it using `go get`:
 
 ```shell
-go get gocloud.dev
+go get github.com/kainoaseto/go-cloud
 ```
 
 Then follow the [Go CDK tutorial][]. Links to additional documentation and

@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/postgres/rdspostgres
+title: github.com/kainoaseto/go-cloud/postgres/rdspostgres
 type: pkg
 ---

@@ -30,10 +30,10 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/runtimevar/driver"
-	"gocloud.dev/secrets/localsecrets"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/runtimevar/driver"
+	"github.com/kainoaseto/go-cloud/secrets/localsecrets"
 )
 
 // How long we wait on a call that is expected to block forever before cancelling it.

@@ -26,11 +26,11 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
-	"gocloud.dev/runtimevar/drivertest"
-	"gocloud.dev/secrets"
-	_ "gocloud.dev/secrets/localsecrets"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/driver"
+	"github.com/kainoaseto/go-cloud/runtimevar/drivertest"
+	"github.com/kainoaseto/go-cloud/secrets"
+	_ "github.com/kainoaseto/go-cloud/secrets/localsecrets"
 )
 
 type harness struct {

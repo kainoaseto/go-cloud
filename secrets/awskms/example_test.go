@@ -19,12 +19,12 @@ import (
 	"log"
 
 	"github.com/aws/aws-sdk-go/aws/session"
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/awskms"
+	"github.com/kainoaseto/go-cloud/secrets"
+	"github.com/kainoaseto/go-cloud/secrets/awskms"
 )
 
 func ExampleOpenKeeper() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
 
 	// Establish an AWS session.
 	// See https://docs.aws.amazon.com/sdk-for-go/api/aws/session/ for more info.
@@ -45,9 +45,9 @@ func ExampleOpenKeeper() {
 }
 
 func Example_openFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/secrets/awskms"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/secrets/awskms"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Use one of the following:

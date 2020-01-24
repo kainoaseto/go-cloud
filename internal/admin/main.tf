@@ -34,7 +34,7 @@ module "go_cloud_repo" {
   source       = "./repository"
   name         = "go-cloud"
   description  = "The Go Cloud Development Kit (Go CDK): A library and tools for open cloud development in Go."
-  homepage_url = "https://gocloud.dev/"
+  homepage_url = "https://github.com/kainoaseto/go-cloud/"
 
   topics = [
     "cloud",

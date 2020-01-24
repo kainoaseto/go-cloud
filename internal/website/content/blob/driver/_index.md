@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/blob/driver
+title: github.com/kainoaseto/go-cloud/blob/driver
 type: pkg
 ---

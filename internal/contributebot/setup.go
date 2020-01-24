@@ -26,14 +26,14 @@ import (
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/google/wire"
 	"go.opencensus.io/trace"
-	"gocloud.dev/gcp"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/gcppubsub"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/filevar"
-	"gocloud.dev/server"
-	"gocloud.dev/server/health"
-	"gocloud.dev/server/requestlog"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/gcppubsub"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/filevar"
+	"github.com/kainoaseto/go-cloud/server"
+	"github.com/kainoaseto/go-cloud/server/health"
+	"github.com/kainoaseto/go-cloud/server/requestlog"
 )
 
 func setup(ctx context.Context, cfg flagConfig) (*worker, *server.Server, func(), error) {

@@ -23,11 +23,11 @@ import (
 
 	firestore "cloud.google.com/go/firestore/apiv1"
 	"github.com/aws/aws-sdk-go/aws/awserr"
-	"gocloud.dev/docstore"
-	_ "gocloud.dev/docstore/awsdynamodb"
-	_ "gocloud.dev/docstore/gcpfirestore"
-	"gocloud.dev/docstore/memdocstore"
-	"gocloud.dev/gcerrors"
+	"github.com/kainoaseto/go-cloud/docstore"
+	_ "github.com/kainoaseto/go-cloud/docstore/awsdynamodb"
+	_ "github.com/kainoaseto/go-cloud/docstore/gcpfirestore"
+	"github.com/kainoaseto/go-cloud/docstore/memdocstore"
+	"github.com/kainoaseto/go-cloud/gcerrors"
 )
 
 type Player struct {
@@ -37,8 +37,8 @@ type Player struct {
 }
 
 func ExampleCollection_Actions_bulkWrite() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var coll *docstore.Collection
 
@@ -55,8 +55,8 @@ func ExampleCollection_Actions_bulkWrite() {
 }
 
 func ExampleCollection_Actions_getAfterWrite() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var coll *docstore.Collection
 
@@ -72,8 +72,8 @@ func ExampleCollection_Actions_getAfterWrite() {
 }
 
 func ExampleCollection_Update() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var coll *docstore.Collection
 
@@ -101,7 +101,7 @@ func ExampleOpenCollection() {
 	ctx := context.Background()
 	// Open a collection using the gcpfirestore package.
 	// You will need to blank-import the package for this to work:
-	//   import _ "gocloud.dev/docstore/gcpfirestore"
+	//   import _ "github.com/kainoaseto/go-cloud/docstore/gcpfirestore"
 	coll, err := docstore.OpenCollection(ctx, "firestore://my-collection")
 	if err != nil {
 		log.Fatal(err)
@@ -116,10 +116,10 @@ func ExampleCollection_As() {
 	// access to the underlying *cloud.google.com/go/firestore/apiv1.Client.
 
 	// You will need to blank-import the package for this to work:
-	//   import _ "gocloud.dev/docstore/gcpfirestore"
+	//   import _ "github.com/kainoaseto/go-cloud/docstore/gcpfirestore"
 
 	// The types exposed for As by gcpfirestore are documented in
-	// https://godoc.org/gocloud.dev/docstore/gcpfirestore#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/docstore/gcpfirestore#hdr-As
 
 	// This URL will open the collection using default credentials.
 	ctx := context.Background()
@@ -142,10 +142,10 @@ func ExampleCollection_As() {
 func ExampleCollection_ErrorAs() {
 	// This example is specific to the awsdynamodb implementation.
 	// You will need to blank-import the package for this to work:
-	//   import _ "gocloud.dev/docstore/awsdynamodb"
+	//   import _ "github.com/kainoaseto/go-cloud/docstore/awsdynamodb"
 
 	// The types exposed for As by mongodocstore are documented in
-	// https://godoc.org/gocloud.dev/docstore/mongodocstore#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/docstore/mongodocstore#hdr-As
 
 	// This URL will open the collection using default credentials.
 	ctx := context.Background()
@@ -167,8 +167,8 @@ func ExampleCollection_ErrorAs() {
 }
 
 func ExampleQuery_Get() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var coll *docstore.Collection
 
@@ -231,8 +231,8 @@ func ExampleQuery_Get_full() {
 }
 
 func Example_optimisticLocking() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	coll, err := memdocstore.OpenCollection("Name", nil)

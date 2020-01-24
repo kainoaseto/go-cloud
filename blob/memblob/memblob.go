@@ -20,12 +20,12 @@
 // For blob.OpenBucket memblob registers for the scheme "mem".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // As
 //
 // memblob does not support any types for As.
-package memblob // import "gocloud.dev/blob/memblob"
+package memblob // import "github.com/kainoaseto/go-cloud/blob/memblob"
 
 import (
 	"bytes"
@@ -41,9 +41,9 @@ import (
 	"sync"
 	"time"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
 )
 
 const defaultPageSize = 1000

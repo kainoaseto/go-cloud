@@ -26,14 +26,14 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // As
 //
 // gcpruntimeconfig exposes the following types for As:
 //  - Snapshot: *pb.Variable
 //  - Error: *status.Status
-package gcpruntimeconfig // import "gocloud.dev/runtimevar/gcpruntimeconfig"
+package gcpruntimeconfig // import "github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig"
 
 import (
 	"bytes"
@@ -47,12 +47,12 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/google/wire"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/useragent"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/driver"
 	pb "google.golang.org/genproto/googleapis/cloud/runtimeconfig/v1beta1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

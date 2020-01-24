@@ -20,8 +20,8 @@ import (
 	"net/url"
 	"testing"
 
-	"gocloud.dev/internal/testing/terraform"
-	"gocloud.dev/mysql"
+	"github.com/kainoaseto/go-cloud/internal/testing/terraform"
+	"github.com/kainoaseto/go-cloud/mysql"
 )
 
 func TestOpen(t *testing.T) {

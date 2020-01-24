@@ -26,20 +26,20 @@ import (
 
 	"github.com/google/subcommands"
 	"github.com/google/uuid"
-	"gocloud.dev/docstore"
+	"github.com/kainoaseto/go-cloud/docstore"
 
 	// Import the docstore driver packages we want to be able to open.
-	_ "gocloud.dev/docstore/awsdynamodb"
-	_ "gocloud.dev/docstore/gcpfirestore"
-	_ "gocloud.dev/docstore/memdocstore"
-	_ "gocloud.dev/docstore/mongodocstore"
+	_ "github.com/kainoaseto/go-cloud/docstore/awsdynamodb"
+	_ "github.com/kainoaseto/go-cloud/docstore/gcpfirestore"
+	_ "github.com/kainoaseto/go-cloud/docstore/memdocstore"
+	_ "github.com/kainoaseto/go-cloud/docstore/mongodocstore"
 )
 
 const helpSuffix = `
 
-  See https://gocloud.dev/concepts/urls/ for more background on
-  Go CDK URLs, and sub-packages under gocloud.dev/docstore
-  (https://godoc.org/gocloud.dev/docstore#pkg-subdirectories)
+  See https://github.com/kainoaseto/go-cloud/concepts/urls/ for more background on
+  Go CDK URLs, and sub-packages under github.com/kainoaseto/go-cloud/docstore
+  (https://godoc.org/github.com/kainoaseto/go-cloud/docstore#pkg-subdirectories)
   for details on the docstore.Collection URL format.
 `
 

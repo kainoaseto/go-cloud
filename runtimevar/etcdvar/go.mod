@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/runtimevar/etcdvar
+module github.com/kainoaseto/go-cloud/runtimevar/etcdvar
 
 go 1.12
 
@@ -29,6 +29,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/json-iterator/go v1.1.6 // indirect
+	github.com/kainoaseto/go-cloud v0.18.0
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
@@ -44,8 +45,7 @@ require (
 	go.uber.org/atomic v1.4.0 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.10.0 // indirect
-	gocloud.dev v0.18.0
 	google.golang.org/grpc v1.21.1
 )
 
-replace gocloud.dev => ../../
+replace github.com/kainoaseto/go-cloud => ../../

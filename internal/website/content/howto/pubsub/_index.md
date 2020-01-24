@@ -24,6 +24,6 @@ locally using [`mempubsub`][], then deploy it to multiple Cloud providers with
 minimal initialization reconfiguration.
 
 [publish/subscribe model]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
-[`pubsub` package]: https://godoc.org/gocloud.dev/pubsub
-[`mempubsub`]: https://godoc.org/gocloud.dev/pubsub/mempubsub
+[`pubsub` package]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub
+[`mempubsub`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/mempubsub
 

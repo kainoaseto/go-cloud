@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/pubsub/azurepubsub
+title: github.com/kainoaseto/go-cloud/pubsub/azurepubsub
 type: pkg
 ---

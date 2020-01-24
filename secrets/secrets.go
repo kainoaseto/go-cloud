@@ -16,7 +16,7 @@
 // messages. Subpackages contain driver implementations of
 // secrets for supported services.
 //
-// See https://gocloud.dev/howto/secrets/ for a detailed how-to guide.
+// See https://github.com/kainoaseto/go-cloud/howto/secrets/ for a detailed how-to guide.
 //
 //
 // OpenCensus Integration
@@ -29,27 +29,27 @@
 //  - Decrypt
 // All trace and metric names begin with the package import path.
 // The traces add the method name.
-// For example, "gocloud.dev/secrets/Encrypt".
+// For example, "github.com/kainoaseto/go-cloud/secrets/Encrypt".
 // The metrics are "completed_calls", a count of completed method calls by driver,
 // method and status (error code); and "latency", a distribution of method latency
 // by driver and method.
-// For example, "gocloud.dev/secrets/latency".
+// For example, "github.com/kainoaseto/go-cloud/secrets/latency".
 //
 // To enable trace collection in your application, see "Configure Exporter" at
 // https://opencensus.io/quickstart/go/tracing.
 // To enable metric collection in your application, see "Exporting stats" at
 // https://opencensus.io/quickstart/go/metrics.
-package secrets // import "gocloud.dev/secrets"
+package secrets // import "github.com/kainoaseto/go-cloud/secrets"
 
 import (
 	"context"
 	"net/url"
 	"sync"
 
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/oc"
-	"gocloud.dev/internal/openurl"
-	"gocloud.dev/secrets/driver"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/oc"
+	"github.com/kainoaseto/go-cloud/internal/openurl"
+	"github.com/kainoaseto/go-cloud/secrets/driver"
 )
 
 // Keeper does encryption and decryption. To create a Keeper, use constructors
@@ -80,7 +80,7 @@ func newKeeper(k driver.Keeper) *Keeper {
 	}
 }
 
-const pkgName = "gocloud.dev/secrets"
+const pkgName = "github.com/kainoaseto/go-cloud/secrets"
 
 var (
 	latencyMeasure = oc.LatencyMeasure(pkgName)
@@ -142,7 +142,7 @@ func (k *Keeper) Close() error {
 }
 
 // ErrorAs converts i to driver-specific types. See
-// https://gocloud.dev/concepts/as/ for background information and the
+// https://github.com/kainoaseto/go-cloud/concepts/as/ for background information and the
 // driver package documentation for the specific types supported for
 // that driver.
 //
@@ -174,7 +174,7 @@ type KeeperURLOpener interface {
 // URLMux is a URL opener multiplexer. It matches the scheme of the URLs
 // against a set of registered schemes and calls the opener that matches the
 // URL's scheme.
-// See https://gocloud.dev/concepts/urls/ for more information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for more information.
 //
 // The zero value is a multiplexer with no registered schemes.
 type URLMux struct {
@@ -224,7 +224,7 @@ func DefaultURLMux() *URLMux {
 
 // OpenKeeper opens the Keeper identified by the URL given.
 // See the URLOpener documentation in driver subpackages for
-// details on supported URL formats, and https://gocloud.dev/concepts/urls
+// details on supported URL formats, and https://github.com/kainoaseto/go-cloud/concepts/urls
 // for more information.
 func OpenKeeper(ctx context.Context, urlstr string) (*Keeper, error) {
 	return defaultURLMux.OpenKeeper(ctx, urlstr)

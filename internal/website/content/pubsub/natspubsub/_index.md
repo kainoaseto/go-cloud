@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/pubsub/natspubsub
+title: github.com/kainoaseto/go-cloud/pubsub/natspubsub
 type: pkg
 ---

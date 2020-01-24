@@ -19,12 +19,12 @@ import (
 	"log"
 
 	"go.etcd.io/etcd/clientv3"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/etcdvar"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/etcdvar"
 )
 
 func ExampleOpenVariable() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
 
 	// Connect to the etcd server.
 	client, err := clientv3.NewFromURL("http://your.etcd.server:9999")
@@ -41,9 +41,9 @@ func ExampleOpenVariable() {
 }
 
 func Example_openVariableFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/runtimevar/etcdvar"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/runtimevar/etcdvar"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// runtimevar.OpenVariable creates a *runtimevar.Variable from a URL.

@@ -22,12 +22,12 @@ import (
 	"github.com/Azure/azure-pipeline-go/pipeline"
 	"github.com/google/wire"
 	"go.opencensus.io/trace"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/azureblob"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/blobvar"
-	"gocloud.dev/server"
-	"gocloud.dev/server/requestlog"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/blob/azureblob"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/blobvar"
+	"github.com/kainoaseto/go-cloud/server"
+	"github.com/kainoaseto/go-cloud/server/requestlog"
 )
 
 // This file wires the generic interfaces up to Microsoft Azure. It

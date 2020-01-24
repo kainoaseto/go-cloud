@@ -72,11 +72,11 @@ Platform, Amazon AWS or Microsoft Azure, you will have to provision
 some resources:
 
 - A storage bucket, to hold the image files. (See the 
-  [`blob` How-To Guide](https://gocloud.dev/howto/blob/).)
+  [`blob` How-To Guide](https://github.com/kainoaseto/go-cloud/howto/blob/).)
 - A Pub/Sub topic and subscription, for requests from the frontend to the
-  processor. (See the [`pubsub` How-To Guide](https://gocloud.dev/howto/pubsub/).)
+  processor. (See the [`pubsub` How-To Guide](https://github.com/kainoaseto/go-cloud/howto/pubsub/).)
 - A document store collection to store order metadata. (See the [`docstore` How-To
-  Guide](https://gocloud.dev/howto/docstore/).)
+  Guide](https://github.com/kainoaseto/go-cloud/howto/docstore/).)
   
 
 Then launch the `order` program with flags that provide the URLs to your

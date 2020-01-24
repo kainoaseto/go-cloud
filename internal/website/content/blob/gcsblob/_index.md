@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/blob/gcsblob
+title: github.com/kainoaseto/go-cloud/blob/gcsblob
 type: pkg
 ---

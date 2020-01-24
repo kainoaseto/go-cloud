@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/runtimevar/filevar/_demo
+title: github.com/kainoaseto/go-cloud/runtimevar/filevar/_demo
 type: pkg
 ---

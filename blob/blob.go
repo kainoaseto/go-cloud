@@ -16,14 +16,14 @@
 // within a storage location. Subpackages contain driver implementations of
 // blob for supported services.
 //
-// See https://gocloud.dev/howto/blob/ for a detailed how-to guide.
+// See https://github.com/kainoaseto/go-cloud/howto/blob/ for a detailed how-to guide.
 //
 //
 // Errors
 //
 // The errors returned from this package can be inspected in several ways:
 //
-// The Code function from gocloud.dev/gcerrors will return an error code, also
+// The Code function from github.com/kainoaseto/go-cloud/gcerrors will return an error code, also
 // defined in that package, when invoked on an error.
 //
 // The Bucket.ErrorAs method can retrieve the driver error underlying the returned
@@ -44,21 +44,21 @@
 //  - NewWriter, from creation until the call to Close.
 // All trace and metric names begin with the package import path.
 // The traces add the method name.
-// For example, "gocloud.dev/blob/Attributes".
+// For example, "github.com/kainoaseto/go-cloud/blob/Attributes".
 // The metrics are "completed_calls", a count of completed method calls by driver,
 // method and status (error code); and "latency", a distribution of method latency
 // by driver and method.
-// For example, "gocloud.dev/blob/latency".
+// For example, "github.com/kainoaseto/go-cloud/blob/latency".
 //
 // It also collects the following metrics:
-//  - gocloud.dev/blob/bytes_read: the total number of bytes read, by driver.
-//  - gocloud.dev/blob/bytes_written: the total number of bytes written, by driver.
+//  - github.com/kainoaseto/go-cloud/blob/bytes_read: the total number of bytes read, by driver.
+//  - github.com/kainoaseto/go-cloud/blob/bytes_written: the total number of bytes written, by driver.
 //
 // To enable trace collection in your application, see "Configure Exporter" at
 // https://opencensus.io/quickstart/go/tracing.
 // To enable metric collection in your application, see "Exporting stats" at
 // https://opencensus.io/quickstart/go/metrics.
-package blob // import "gocloud.dev/blob"
+package blob // import "github.com/kainoaseto/go-cloud/blob"
 
 import (
 	"bytes"
@@ -81,11 +81,11 @@ import (
 	"go.opencensus.io/stats"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/tag"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/oc"
-	"gocloud.dev/internal/openurl"
+	"github.com/kainoaseto/go-cloud/blob/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/oc"
+	"github.com/kainoaseto/go-cloud/internal/openurl"
 )
 
 // Reader reads bytes from a blob.
@@ -132,7 +132,7 @@ func (r *Reader) Size() int64 {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (r *Reader) As(i interface{}) bool {
@@ -213,7 +213,7 @@ type Attributes struct {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (a *Attributes) As(i interface{}) bool {
@@ -381,7 +381,7 @@ type ListOptions struct {
 	// BeforeList is a callback that will be called before each call to the
 	// the underlying service's list functionality.
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	BeforeList func(asFunc func(interface{}) bool) error
 }
 
@@ -453,7 +453,7 @@ type ListObject struct {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (o *ListObject) As(i interface{}) bool {
@@ -477,7 +477,7 @@ type Bucket struct {
 	closed bool
 }
 
-const pkgName = "gocloud.dev/blob"
+const pkgName = "github.com/kainoaseto/go-cloud/blob"
 
 var (
 	latencyMeasure      = oc.LatencyMeasure(pkgName)
@@ -524,7 +524,7 @@ func newBucket(b driver.Bucket) *Bucket {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (b *Bucket) As(i interface{}) bool {
@@ -537,7 +537,7 @@ func (b *Bucket) As(i interface{}) bool {
 // ErrorAs converts err to driver-specific types.
 // ErrorAs panics if i is nil or not a pointer.
 // ErrorAs returns false if err == nil.
-// See https://gocloud.dev/concepts/as/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 func (b *Bucket) ErrorAs(err error, i interface{}) bool {
 	return gcerr.ErrorAs(err, i, b.b.ErrorAs)
 }
@@ -989,7 +989,7 @@ type ReaderOptions struct {
 	// case it may not be called at all).
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	BeforeRead func(asFunc func(interface{}) bool) error
 }
 
@@ -1050,7 +1050,7 @@ type WriterOptions struct {
 	// sending an upload request.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	BeforeWrite func(asFunc func(interface{}) bool) error
 }
 
@@ -1060,7 +1060,7 @@ type CopyOptions struct {
 	// initiated.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	BeforeCopy func(asFunc func(interface{}) bool) error
 }
 
@@ -1076,7 +1076,7 @@ type BucketURLOpener interface {
 // URLMux is a URL opener multiplexer. It matches the scheme of the URLs
 // against a set of registered schemes and calls the opener that matches the
 // URL's scheme.
-// See https://gocloud.dev/concepts/urls/ for more information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for more information.
 //
 // The zero value is a multiplexer with no registered schemes.
 type URLMux struct {
@@ -1147,7 +1147,7 @@ func DefaultURLMux() *URLMux {
 // OpenBucket opens the bucket identified by the URL given.
 //
 // See the URLOpener documentation in driver subpackages for
-// details on supported URL formats, and https://gocloud.dev/concepts/urls/
+// details on supported URL formats, and https://github.com/kainoaseto/go-cloud/concepts/urls/
 // for more information.
 //
 // In addition to driver-specific query parameters, OpenBucket supports

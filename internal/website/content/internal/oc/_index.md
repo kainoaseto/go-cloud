@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/oc
+title: github.com/kainoaseto/go-cloud/internal/oc
 type: pkg
 ---

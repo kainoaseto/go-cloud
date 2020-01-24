@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/pubsub/natspubsub
+module github.com/kainoaseto/go-cloud/pubsub/natspubsub
 
 go 1.12
 
 require (
 	github.com/golang/groupcache v0.0.0-20191027212112-611e8accdfc9 // indirect
 	github.com/google/go-cmp v0.3.0
+	github.com/kainoaseto/go-cloud v0.18.0
 	github.com/nats-io/nats-server/v2 v2.0.0
 	github.com/nats-io/nats.go v1.9.1
 	github.com/nats-io/nkeys v0.1.3 // indirect
-	gocloud.dev v0.18.0
 	golang.org/x/crypto v0.0.0-20191112222119-e1110fd1c708 // indirect
 	golang.org/x/net v0.0.0-20191112182307-2180aed22343 // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
@@ -32,4 +32,4 @@ require (
 	google.golang.org/grpc v1.25.1 // indirect
 )
 
-replace gocloud.dev => ../../
+replace github.com/kainoaseto/go-cloud => ../../

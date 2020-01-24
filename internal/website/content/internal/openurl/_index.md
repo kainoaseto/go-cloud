@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/openurl
+title: github.com/kainoaseto/go-cloud/internal/openurl
 type: pkg
 ---

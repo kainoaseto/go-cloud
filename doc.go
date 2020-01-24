@@ -34,15 +34,15 @@ allows the Go CDK to grow to support any number of cloud services, without
 increasing compile times or binary sizes, and avoiding any side effects from
 `init()` functions.
 
-For non-reference documentation, see https://gocloud.dev/
+For non-reference documentation, see https://github.com/kainoaseto/go-cloud/
 
 URLs
 
-See https://gocloud.dev/concepts/urls/ for a discussion of URLs in the Go CDK.
+See https://github.com/kainoaseto/go-cloud/concepts/urls/ for a discussion of URLs in the Go CDK.
 
 As
 
-See https://gocloud.dev/concepts/as/ for a discussion of how to write
+See https://github.com/kainoaseto/go-cloud/concepts/as/ for a discussion of how to write
 service-specific code with the Go CDK.
 */
-package cloud // import "gocloud.dev"
+package cloud // import "github.com/kainoaseto/go-cloud"

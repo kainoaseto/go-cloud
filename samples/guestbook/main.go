@@ -31,12 +31,12 @@ import (
 	"github.com/google/wire"
 	"github.com/gorilla/mux"
 	"go.opencensus.io/trace"
-	"gocloud.dev/blob"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/server"
-	"gocloud.dev/server/health"
-	"gocloud.dev/server/health/sqlhealth"
+	"github.com/kainoaseto/go-cloud/blob"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/server"
+	"github.com/kainoaseto/go-cloud/server/health"
+	"github.com/kainoaseto/go-cloud/server/health/sqlhealth"
 )
 
 type cliFlags struct {

@@ -21,7 +21,7 @@ import (
 	"strings"
 	"sync"
 
-	"gocloud.dev/docstore"
+	"github.com/kainoaseto/go-cloud/docstore"
 )
 
 func init() {

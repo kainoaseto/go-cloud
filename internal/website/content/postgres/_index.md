@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/postgres
+title: github.com/kainoaseto/go-cloud/postgres
 type: pkg
 ---

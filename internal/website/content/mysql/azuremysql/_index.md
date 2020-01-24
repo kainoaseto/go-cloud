@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/mysql/azuremysql
+title: github.com/kainoaseto/go-cloud/mysql/azuremysql
 type: pkg
 ---

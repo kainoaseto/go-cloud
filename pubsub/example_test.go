@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"log"
 
-	"gocloud.dev/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub"
 
 	pbraw "cloud.google.com/go/pubsub/apiv1"
 	pbapi "google.golang.org/genproto/googleapis/pubsub/v1"
@@ -27,8 +27,8 @@ import (
 )
 
 func ExampleTopic_Send() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var topic *pubsub.Topic
 
@@ -48,8 +48,8 @@ func ExampleTopic_Send() {
 }
 
 func ExampleSubscription_Receive() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var subscription *pubsub.Subscription
 
@@ -69,8 +69,8 @@ func ExampleSubscription_Receive() {
 }
 
 func ExampleSubscription_Receive_concurrent() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 	var subscription *pubsub.Subscription
 
@@ -118,7 +118,7 @@ func ExampleMessage_As() {
 	// This example is specific to the gcppubsub implementation; it demonstrates
 	// access to the underlying PubsubMessage type.
 	// The types exposed for As by gcppubsub are documented in
-	// https://godoc.org/gocloud.dev/pubsub/gcppubsub#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/gcppubsub#hdr-As
 
 	ctx := context.Background()
 	sub, err := pubsub.OpenSubscription(ctx, "gcppubsub://project/topic")
@@ -142,7 +142,7 @@ func ExampleSubscription_As() {
 	// This example is specific to the gcppubsub implementation; it demonstrates
 	// access to the underlying SubscriberClient type.
 	// The types exposed for As by gcppubsub are documented in
-	// https://godoc.org/gocloud.dev/pubsub/gcppubsub#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/gcppubsub#hdr-As
 
 	ctx := context.Background()
 	sub, err := pubsub.OpenSubscription(ctx, "gcppubsub://project/topic")
@@ -161,7 +161,7 @@ func ExampleSubscription_ErrorAs() {
 	// This example is specific to the gcppubsub implementation; it demonstrates
 	// access to the underlying Status type.
 	// The types exposed for As by gcppubsub are documented in
-	// https://godoc.org/gocloud.dev/pubsub/gcppubsub#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/gcppubsub#hdr-As
 
 	ctx := context.Background()
 	sub, err := pubsub.OpenSubscription(ctx, "gcppubsub://project/badtopic")
@@ -185,7 +185,7 @@ func ExampleTopic_As() {
 	// This example is specific to the gcppubsub implementation; it demonstrates
 	// access to the underlying PublisherClient type.
 	// The types exposed for As by gcppubsub are documented in
-	// https://godoc.org/gocloud.dev/pubsub/gcppubsub#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/gcppubsub#hdr-As
 
 	ctx := context.Background()
 	topic, err := pubsub.OpenTopic(ctx, "gcppubsub://project/topic")
@@ -204,7 +204,7 @@ func ExampleTopic_ErrorAs() {
 	// This example is specific to the gcppubsub implementation; it demonstrates
 	// access to the underlying Status type.
 	// The types exposed for As by gcppubsub are documented in
-	// https://godoc.org/gocloud.dev/pubsub/gcppubsub#hdr-As
+	// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/gcppubsub#hdr-As
 
 	ctx := context.Background()
 	topic, err := pubsub.OpenTopic(ctx, "gcppubsub://project/topic")

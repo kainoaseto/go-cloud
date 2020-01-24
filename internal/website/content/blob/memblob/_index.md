@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/blob/memblob
+title: github.com/kainoaseto/go-cloud/blob/memblob
 type: pkg
 ---

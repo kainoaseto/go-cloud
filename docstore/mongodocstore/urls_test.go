@@ -19,7 +19,7 @@ import (
 	"os"
 	"testing"
 
-	"gocloud.dev/docstore"
+	"github.com/kainoaseto/go-cloud/docstore"
 )
 
 func fakeConnectionStringInEnv() func() {

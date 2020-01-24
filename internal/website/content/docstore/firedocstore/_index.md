@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/docstore/firedocstore
+title: github.com/kainoaseto/go-cloud/docstore/firedocstore
 type: pkg
 ---

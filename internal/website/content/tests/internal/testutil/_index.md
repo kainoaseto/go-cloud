@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/tests/internal/testutil
+title: github.com/kainoaseto/go-cloud/tests/internal/testutil
 type: pkg
 ---

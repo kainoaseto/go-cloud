@@ -18,12 +18,12 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/azurekeyvault"
+	"github.com/kainoaseto/go-cloud/secrets"
+	"github.com/kainoaseto/go-cloud/secrets/azurekeyvault"
 )
 
 func ExampleOpenKeeper() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
 
 	// Get a client to use with the Azure KeyVault API, using default
 	// authorization from the environment.
@@ -44,9 +44,9 @@ func ExampleOpenKeeper() {
 }
 
 func Example_openFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/secrets/azurekeyvault"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/kainoaseto/go-cloud; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/kainoaseto/go-cloud, add a blank import: _ "github.com/kainoaseto/go-cloud/secrets/azurekeyvault"
+	// PRAGMA: On github.com/kainoaseto/go-cloud, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// The "azurekeyvault" URL scheme is replaced with "https" to construct an Azure

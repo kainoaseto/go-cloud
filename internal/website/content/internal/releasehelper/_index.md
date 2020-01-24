@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/releasehelper
+title: github.com/kainoaseto/go-cloud/internal/releasehelper
 type: pkg
 ---

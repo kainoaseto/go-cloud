@@ -29,8 +29,8 @@ link it in.
 import (
     "context"
 
-    "gocloud.dev/pubsub"
-    _ "gocloud.dev/pubsub/<driver>"
+    "github.com/kainoaseto/go-cloud/pubsub"
+    _ "github.com/kainoaseto/go-cloud/pubsub/<driver>"
 )
 ...
 ctx := context.Background()
@@ -51,7 +51,7 @@ control over the connection settings, you can call the constructor function in
 the driver package directly (like `gcppubsub.OpenTopic`).
 
 ```go
-import "gocloud.dev/pubsub/<driver>"
+import "github.com/kainoaseto/go-cloud/pubsub/<driver>"
 ...
 topic, err := <driver>.OpenTopic(...)
 ...
@@ -63,29 +63,29 @@ when switching between different backing services.
 See the [guide below][] for constructor usage for each supported service.
 
 [guide below]: {{< ref "#services" >}}
-[`*pubsub.Topic`]: https://godoc.org/gocloud.dev/pubsub#Topic
+[`*pubsub.Topic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#Topic
 [`pubsub.OpenTopic`]:
-https://godoc.org/gocloud.dev/pubsub#OpenTopic
+https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#OpenTopic
 ["blank import"]: https://golang.org/doc/effective_go.html#blank_import
 [Concepts: URLs]: {{< ref "/concepts/urls.md" >}}
 [`wire` package]: http://github.com/google/wire
 
 ## Sending Messages on a Topic {#sending}
 
-Sending a message on a [Topic](https://godoc.org/gocloud.dev/pubsub#Topic) looks
+Sending a message on a [Topic](https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#Topic) looks
 like this:
 
-{{< goexample src="gocloud.dev/pubsub.ExampleTopic_Send" imports="0" >}}
+{{< goexample src="github.com/kainoaseto/go-cloud/pubsub.ExampleTopic_Send" imports="0" >}}
 
 Note that the [semantics of message delivery][] can vary by backing service.
 
-[semantics of message delivery]: https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+[semantics of message delivery]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 
 ## Other Usage Samples
 
 * [CLI Sample](https://github.com/google/go-cloud/tree/master/samples/gocdk-pubsub)
-* [Order Processor sample](https://gocloud.dev/tutorials/order/)
-* [pubsub package examples](https://godoc.org/gocloud.dev/pubsub#pkg-examples)
+* [Order Processor sample](https://github.com/kainoaseto/go-cloud/tutorials/order/)
+* [pubsub package examples](https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#pkg-examples)
 
 ## Supported Pub/Sub Services {#services}
 
@@ -104,7 +104,7 @@ alternatives, including using environment variables.
 [GCP creds]: https://cloud.google.com/docs/authentication/production
 [`gcloud auth login`]: https://cloud.google.com/sdk/gcloud/reference/auth/login
 
-{{< goexample "gocloud.dev/pubsub/gcppubsub.Example_openTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/gcppubsub.Example_openTopicFromURL" >}}
 
 #### Google Cloud Pub/Sub Constructor {#gcp-ctor}
 
@@ -113,9 +113,9 @@ must first obtain [GCP credentials][GCP creds] and then create a gRPC
 connection to Cloud Pub/Sub. (This gRPC connection can be reused among
 topics.)
 
-{{< goexample "gocloud.dev/pubsub/gcppubsub.ExampleOpenTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/gcppubsub.ExampleOpenTopic" >}}
 
-[`gcppubsub.OpenTopic`]: https://godoc.org/gocloud.dev/pubsub/gcppubsub#OpenTopic
+[`gcppubsub.OpenTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/gcppubsub#OpenTopic
 
 ### Amazon Simple Notification Service {#sns}
 
@@ -133,7 +133,7 @@ alternatives, including using environment variables.
 
 [AWS Session]: https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
 
-{{< goexample "gocloud.dev/pubsub/awssnssqs.Example_openSNSTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/awssnssqs.Example_openSNSTopicFromURL" >}}
 
 SNS messages are restricted to UTF-8 clean payloads. If your application
 sends a message that contains non-UTF-8 bytes, then the Go CDK will
@@ -151,9 +151,9 @@ you may need to manually Base64 decode the message payload.
 The [`awssnssqs.OpenSNSTopic`][] constructor opens an SNS topic. You must first
 create an [AWS session][] with the same region as your topic:
 
-{{< goexample "gocloud.dev/pubsub/awssnssqs.ExampleOpenSNSTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/awssnssqs.ExampleOpenSNSTopic" >}}
 
-[`awssnssqs.OpenSNSTopic`]: https://godoc.org/gocloud.dev/pubsub/awssnssqs#OpenSNSTopic
+[`awssnssqs.OpenSNSTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/awssnssqs#OpenSNSTopic
 [AWS session]: https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
 
 ### Amazon Simple Queue Service {#sqs}
@@ -165,7 +165,7 @@ query parameter to ensure your application connects to the correct region, but
 otherwise `pubsub.OpenTopic` will use the region found in the environment
 variables or your AWS CLI configuration.
 
-{{< goexample "gocloud.dev/pubsub/awssnssqs.Example_openSQSTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/awssnssqs.Example_openSQSTopicFromURL" >}}
 
 SQS messages are restricted to UTF-8 clean payloads. If your application
 sends a message that contains non-UTF-8 bytes, then the Go CDK will
@@ -184,9 +184,9 @@ you may need to manually Base64 decode the message payload.
 The [`awssnssqs.OpenSQSTopic`][] constructor opens an SQS topic. You must first
 create an [AWS session][] with the same region as your topic:
 
-{{< goexample "gocloud.dev/pubsub/awssnssqs.ExampleOpenSQSTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/awssnssqs.ExampleOpenSQSTopic" >}}
 
-[`awssnssqs.OpenSQSTopic`]: https://godoc.org/gocloud.dev/pubsub/awssnssqs#OpenSQSTopic
+[`awssnssqs.OpenSQSTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/awssnssqs#OpenSQSTopic
 [AWS session]: https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
 
 ### Azure Service Bus {#azure}
@@ -197,7 +197,7 @@ environment variable `SERVICEBUS_CONNECTION_STRING` to obtain the Service Bus
 connection string. The connection string can be obtained
 [from the Azure portal][Azure connection string].
 
-{{< goexample "gocloud.dev/pubsub/azuresb.Example_openTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/azuresb.Example_openTopicFromURL" >}}
 
 [AMQP 1.0]: https://www.amqp.org/
 [Azure connection string]: https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions#get-the-connection-string
@@ -210,9 +210,9 @@ must first connect to the topic using the [Azure Service Bus library][] and
 then pass it to `azuresb.OpenTopic`. There are also helper functions in the
 `azuresb` package to make this easier.
 
-{{< goexample "gocloud.dev/pubsub/azuresb.ExampleOpenTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/azuresb.ExampleOpenTopic" >}}
 
-[`azuresb.OpenTopic`]: https://godoc.org/gocloud.dev/pubsub/azuresb#OpenTopic
+[`azuresb.OpenTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/azuresb#OpenTopic
 [Azure Service Bus library]: https://github.com/Azure/azure-service-bus-go
 
 ### RabbitMQ {#rabbitmq}
@@ -222,7 +222,7 @@ AMQP spoken by [RabbitMQ][]. A RabbitMQ URL only includes the exchange name.
 The RabbitMQ's server is discovered from the `RABBIT_SERVER_URL` environment
 variable (which is something like `amqp://guest:guest@localhost:5672/`).
 
-{{< goexample "gocloud.dev/pubsub/rabbitpubsub.Example_openTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/rabbitpubsub.Example_openTopicFromURL" >}}
 
 [AMQP 0.9.1]: https://www.rabbitmq.com/protocol.html
 [RabbitMQ]: https://www.rabbitmq.com
@@ -232,10 +232,10 @@ variable (which is something like `amqp://guest:guest@localhost:5672/`).
 The [`rabbitpubsub.OpenTopic`][] constructor opens a RabbitMQ exchange. You
 must first create an [`*amqp.Connection`][] to your RabbitMQ instance.
 
-{{< goexample "gocloud.dev/pubsub/rabbitpubsub.ExampleOpenTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/rabbitpubsub.ExampleOpenTopic" >}}
 
 [`*amqp.Connection`]: https://godoc.org/github.com/streadway/amqp#Connection
-[`rabbitpubsub.OpenTopic`]: https://godoc.org/gocloud.dev/pubsub/rabbitpubsub#OpenTopic
+[`rabbitpubsub.OpenTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/rabbitpubsub#OpenTopic
 
 ### NATS {#nats}
 
@@ -243,7 +243,7 @@ The Go CDK can publish to a [NATS][] subject. A NATS URL only includes the
 subject name. The NATS server is discovered from the `NATS_SERVER_URL`
 environment variable (which is something like `nats://nats.example.com`).
 
-{{< goexample "gocloud.dev/pubsub/natspubsub.Example_openTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/natspubsub.Example_openTopicFromURL" >}}
 
 Because NATS does not natively support metadata, messages sent to NATS will
 be encoded with [gob][].
@@ -256,10 +256,10 @@ be encoded with [gob][].
 The [`natspubsub.OpenTopic`][] constructor opens a NATS subject as a topic. You
 must first create an [`*nats.Conn`][] to your NATS instance.
 
-{{< goexample "gocloud.dev/pubsub/natspubsub.ExampleOpenTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/natspubsub.ExampleOpenTopic" >}}
 
 [`*nats.Conn`]: https://godoc.org/github.com/nats-io/go-nats#Conn
-[`natspubsub.OpenTopic`]: https://godoc.org/gocloud.dev/pubsub/natspubsub#OpenTopic
+[`natspubsub.OpenTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/natspubsub#OpenTopic
 
 ### Kafka {#kafka}
 
@@ -268,7 +268,7 @@ topic name. The brokers in the Kafka cluster are discovered from the
 `KAFKA_BROKERS` environment variable (which is a comma-delimited list of
 hosts, something like `1.2.3.4:9092,5.6.7.8:9092`).
 
-{{< goexample "gocloud.dev/pubsub/kafkapubsub.Example_openTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/kafkapubsub.Example_openTopicFromURL" >}}
 
 [Kafka]: https://kafka.apache.org/
 
@@ -283,11 +283,11 @@ exposes many knobs that can affect performance and semantics; review and set
 them carefully. [`kafkapubsub.MinimalConfig`][] provides a minimal config to get
 you started.
 
-{{< goexample "gocloud.dev/pubsub/kafkapubsub.ExampleOpenTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/kafkapubsub.ExampleOpenTopic" >}}
 
 [`*sarama.Config`]: https://godoc.org/github.com/Shopify/sarama#Config
-[`kafkapubsub.OpenTopic`]: https://godoc.org/gocloud.dev/pubsub/kafkapubsub#OpenTopic
-[`kafkapubsub.MinimalConfig`]: https://godoc.org/gocloud.dev/pubsub/kafkapubsub#MinimalConfig
+[`kafkapubsub.OpenTopic`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/kafkapubsub#OpenTopic
+[`kafkapubsub.MinimalConfig`]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/kafkapubsub#MinimalConfig
 
 ### In-Memory {#mem}
 
@@ -296,7 +296,7 @@ The names in `mem://` URLs are a process-wide namespace, so subscriptions to
 the same name will receive messages posted to that topic. This is detailed
 more in the [subscription guide][subscribe-mem].
 
-{{< goexample "gocloud.dev/pubsub/mempubsub.Example_openTopicFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/mempubsub.Example_openTopicFromURL" >}}
 
 [subscribe-mem]: {{< ref "./subscribe.md#mem" >}}
 
@@ -306,7 +306,7 @@ To create an in-memory Pub/Sub topic, use the [`mempubsub.NewTopic`
 function][]. You can use the returned topic to create in-memory
 subscriptions, as detailed in the [subscription guide][subscribe-mem-ctor].
 
-{{< goexample "gocloud.dev/pubsub/mempubsub.ExampleNewTopic" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/pubsub/mempubsub.ExampleNewTopic" >}}
 
-[`mempubsub.NewTopic` function]: https://godoc.org/gocloud.dev/pubsub/mempubsub#NewTopic
+[`mempubsub.NewTopic` function]: https://godoc.org/github.com/kainoaseto/go-cloud/pubsub/mempubsub#NewTopic
 [subscribe-mem-ctor]: {{< ref "./subscribe.md#mem-ctor" >}}

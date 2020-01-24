@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/server/driver
+title: github.com/kainoaseto/go-cloud/server/driver
 type: pkg
 ---

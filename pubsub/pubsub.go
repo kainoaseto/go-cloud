@@ -16,7 +16,7 @@
 // publish/subscribe systems. Subpackages contain driver implementations of
 // pubsub for supported services
 //
-// See https://gocloud.dev/howto/pubsub/ for a detailed how-to guide.
+// See https://github.com/kainoaseto/go-cloud/howto/pubsub/ for a detailed how-to guide.
 //
 //
 // At-most-once and At-least-once Delivery
@@ -52,17 +52,17 @@
 //  - The internal driver methods SendBatch, SendAcks and ReceiveBatch.
 // All trace and metric names begin with the package import path.
 // The traces add the method name.
-// For example, "gocloud.dev/pubsub/Topic.Send".
+// For example, "github.com/kainoaseto/go-cloud/pubsub/Topic.Send".
 // The metrics are "completed_calls", a count of completed method calls by driver,
 // method and status (error code); and "latency", a distribution of method latency
 // by driver and method.
-// For example, "gocloud.dev/pubsub/latency".
+// For example, "github.com/kainoaseto/go-cloud/pubsub/latency".
 //
 // To enable trace collection in your application, see "Configure Exporter" at
 // https://opencensus.io/quickstart/go/tracing.
 // To enable metric collection in your application, see "Exporting stats" at
 // https://opencensus.io/quickstart/go/metrics.
-package pubsub // import "gocloud.dev/pubsub"
+package pubsub // import "github.com/kainoaseto/go-cloud/pubsub"
 
 import (
 	"context"
@@ -77,13 +77,13 @@ import (
 	"unicode/utf8"
 
 	gax "github.com/googleapis/gax-go"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/batcher"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/oc"
-	"gocloud.dev/internal/openurl"
-	"gocloud.dev/internal/retry"
-	"gocloud.dev/pubsub/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/batcher"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/oc"
+	"github.com/kainoaseto/go-cloud/internal/openurl"
+	"github.com/kainoaseto/go-cloud/internal/retry"
+	"github.com/kainoaseto/go-cloud/pubsub/driver"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -108,7 +108,7 @@ type Message struct {
 	// The callback will be called exactly once, before the message is sent.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 	BeforeSend func(asFunc func(interface{}) bool) error
 
 	// asFunc invokes driver.Message.AsFunc.
@@ -131,7 +131,7 @@ type Message struct {
 // Ack acknowledges the message, telling the server that it does not need to be
 // sent again to the associated Subscription. It will be a no-op for some
 // drivers; see
-// https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more info.
 //
 // Ack returns immediately, but the actual ack is sent in the background, and
@@ -151,7 +151,7 @@ func (m *Message) Ack() {
 //
 // Some services do not support Nack; for example, at-most-once services
 // can't redeliver a message. See
-// https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more info.
 func (m *Message) Nackable() bool {
 	return m.nackable
@@ -162,7 +162,7 @@ func (m *Message) Nackable() bool {
 //
 // Nack panics for some drivers, as Nack is meaningless when messages can't be
 // redelivered. You can call Nackable to determine if Nack is available. See
-// https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // fore more info.
 //
 // Nack returns immediately, but the actual nack is sent in the background,
@@ -187,7 +187,7 @@ func (m *Message) Nack() {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 // As panics unless it is called on a message obtained from Subscription.Receive.
@@ -280,7 +280,7 @@ func (t *Topic) Shutdown(ctx context.Context) (err error) {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (t *Topic) As(i interface{}) bool {
@@ -290,7 +290,7 @@ func (t *Topic) As(i interface{}) bool {
 // ErrorAs converts err to driver-specific types.
 // ErrorAs panics if i is nil or not a pointer.
 // ErrorAs returns false if err == nil.
-// See https://gocloud.dev/concepts/as/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information.
 func (t *Topic) ErrorAs(err error, i interface{}) bool {
 	return gcerr.ErrorAs(err, i, t.driver.ErrorAs)
 }
@@ -330,7 +330,7 @@ func newTopic(d driver.Topic, opts *batcher.Options) *Topic {
 	return t
 }
 
-const pkgName = "gocloud.dev/pubsub"
+const pkgName = "github.com/kainoaseto/go-cloud/pubsub"
 
 var (
 	latencyMeasure = oc.LatencyMeasure(pkgName)
@@ -703,7 +703,7 @@ func (s *Subscription) Shutdown(ctx context.Context) (err error) {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/kainoaseto/go-cloud/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (s *Subscription) As(i interface{}) bool {
@@ -825,7 +825,7 @@ type SubscriptionURLOpener interface {
 // URLMux is a URL opener multiplexer. It matches the scheme of the URLs
 // against a set of registered schemes and calls the opener that matches the
 // URL's scheme.
-// See https://gocloud.dev/concepts/urls/ for more information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for more information.
 //
 // The zero value is a multiplexer with no registered schemes.
 type URLMux struct {
@@ -911,7 +911,7 @@ func DefaultURLMux() *URLMux {
 
 // OpenTopic opens the Topic identified by the URL given.
 // See the URLOpener documentation in driver subpackages for
-// details on supported URL formats, and https://gocloud.dev/concepts/urls
+// details on supported URL formats, and https://github.com/kainoaseto/go-cloud/concepts/urls
 // for more information.
 func OpenTopic(ctx context.Context, urlstr string) (*Topic, error) {
 	return defaultURLMux.OpenTopic(ctx, urlstr)
@@ -919,7 +919,7 @@ func OpenTopic(ctx context.Context, urlstr string) (*Topic, error) {
 
 // OpenSubscription opens the Subscription identified by the URL given.
 // See the URLOpener documentation in driver subpackages for
-// details on supported URL formats, and https://gocloud.dev/concepts/urls
+// details on supported URL formats, and https://github.com/kainoaseto/go-cloud/concepts/urls
 // for more information.
 func OpenSubscription(ctx context.Context, urlstr string) (*Subscription, error) {
 	return defaultURLMux.OpenSubscription(ctx, urlstr)

@@ -21,14 +21,14 @@
 // "https". The default URL opener will use http.DefaultClient.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // As
 //
 // httpvar exposes the following types for As:
 //  - Snapshot: *http.Response
 //  - Error: httpvar.RequestError, url.Error
-package httpvar // import "gocloud.dev/runtimevar/httpvar"
+package httpvar // import "github.com/kainoaseto/go-cloud/runtimevar/httpvar"
 
 import (
 	"bytes"
@@ -39,10 +39,10 @@ import (
 	"net/url"
 	"time"
 
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	"github.com/kainoaseto/go-cloud/runtimevar/driver"
 )
 
 func init() {

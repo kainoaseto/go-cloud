@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/azure/azuredb
+title: github.com/kainoaseto/go-cloud/azure/azuredb
 type: pkg
 ---

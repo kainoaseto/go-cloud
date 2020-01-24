@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/contributebot
+title: github.com/kainoaseto/go-cloud/internal/contributebot
 type: pkg
 ---

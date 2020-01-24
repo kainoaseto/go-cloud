@@ -18,7 +18,7 @@ import (
 	"context"
 	"net/url"
 
-	"gocloud.dev/internal/openurl"
+	"github.com/kainoaseto/go-cloud/internal/openurl"
 )
 
 // CollectionURLOpener opens a collection of documents based on a URL.
@@ -32,7 +32,7 @@ type CollectionURLOpener interface {
 
 // URLMux is a URL opener multiplexer. It matches the scheme of the URLs against
 // a set of registered schemes and calls the opener that matches the URL's
-// scheme. See https://gocloud.dev/concepts/urls/ for more information.
+// scheme. See https://github.com/kainoaseto/go-cloud/concepts/urls/ for more information.
 //
 // The zero value is a multiplexer with no registered scheme.
 type URLMux struct {
@@ -82,7 +82,7 @@ func DefaultURLMux() *URLMux {
 
 // OpenCollection opens the collection identified by the URL given.
 // See the URLOpener documentation in driver subpackages for details
-// on supported URL formats, and https://gocloud.dev/concepts/urls/ for more
+// on supported URL formats, and https://github.com/kainoaseto/go-cloud/concepts/urls/ for more
 // information.
 func OpenCollection(ctx context.Context, urlstr string) (*Collection, error) {
 	return defaultURLMux.OpenCollection(ctx, urlstr)

@@ -25,21 +25,21 @@ import (
 	"os"
 
 	"github.com/google/subcommands"
-	"gocloud.dev/secrets"
+	"github.com/kainoaseto/go-cloud/secrets"
 
 	// Import the secrets driver packages we want to be able to open.
-	_ "gocloud.dev/secrets/awskms"
-	_ "gocloud.dev/secrets/azurekeyvault"
-	_ "gocloud.dev/secrets/gcpkms"
-	_ "gocloud.dev/secrets/hashivault"
-	_ "gocloud.dev/secrets/localsecrets"
+	_ "github.com/kainoaseto/go-cloud/secrets/awskms"
+	_ "github.com/kainoaseto/go-cloud/secrets/azurekeyvault"
+	_ "github.com/kainoaseto/go-cloud/secrets/gcpkms"
+	_ "github.com/kainoaseto/go-cloud/secrets/hashivault"
+	_ "github.com/kainoaseto/go-cloud/secrets/localsecrets"
 )
 
 const helpSuffix = `
 
-  See https://gocloud.dev/concepts/urls/ for more background on
-  Go CDK URLs, and sub-packages under gocloud.dev/secrets
-  (https://godoc.org/gocloud.dev/secrets#pkg-subdirectories)
+  See https://github.com/kainoaseto/go-cloud/concepts/urls/ for more background on
+  Go CDK URLs, and sub-packages under github.com/kainoaseto/go-cloud/secrets
+  (https://godoc.org/github.com/kainoaseto/go-cloud/secrets#pkg-subdirectories)
   for details on the secrets.Keeper URL format.
 `
 

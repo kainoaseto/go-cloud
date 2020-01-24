@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/internal/useragent
+title: github.com/kainoaseto/go-cloud/internal/useragent
 type: pkg
 ---

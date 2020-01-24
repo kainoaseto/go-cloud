@@ -25,7 +25,7 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 // GCP Pub/Sub emulator is supported as per https://cloud.google.com/pubsub/docs/emulator
 // So, when environment variable 'PUBSUB_EMULATOR_HOST' is set
@@ -35,7 +35,7 @@
 //
 // GCP Pub/Sub supports at-least-once semantics; applications must
 // call Message.Ack after processing a message, or it will be redelivered.
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/kainoaseto/go-cloud/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // As
@@ -46,7 +46,7 @@
 //  - Message.BeforeSend: *pb.PubsubMessage
 //  - Message: *pb.PubsubMessage
 //  - Error: *google.golang.org/grpc/status.Status
-package gcppubsub // import "gocloud.dev/pubsub/gcppubsub"
+package gcppubsub // import "github.com/kainoaseto/go-cloud/pubsub/gcppubsub"
 
 import (
 	"context"
@@ -61,13 +61,13 @@ import (
 
 	raw "cloud.google.com/go/pubsub/apiv1"
 	"github.com/google/wire"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/batcher"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
+	"github.com/kainoaseto/go-cloud/gcerrors"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/internal/batcher"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/useragent"
+	"github.com/kainoaseto/go-cloud/pubsub"
+	"github.com/kainoaseto/go-cloud/pubsub/driver"
 	"google.golang.org/api/option"
 	pb "google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"

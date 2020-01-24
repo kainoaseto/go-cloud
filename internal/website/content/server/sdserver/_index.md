@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/server/sdserver
+title: github.com/kainoaseto/go-cloud/server/sdserver
 type: pkg
 ---

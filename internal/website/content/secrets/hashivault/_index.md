@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/secrets/hashivault
+title: github.com/kainoaseto/go-cloud/secrets/hashivault
 type: pkg
 ---

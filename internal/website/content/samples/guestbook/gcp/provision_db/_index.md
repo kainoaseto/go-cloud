@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/samples/guestbook/gcp/provision_db
+title: github.com/kainoaseto/go-cloud/samples/guestbook/gcp/provision_db
 type: pkg
 ---

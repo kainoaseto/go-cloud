@@ -17,9 +17,9 @@ including Cloud and on-prem solutions. You can develop your application locally
 using [`filevar`][] or [`constantvar`][], then deploy it to multiple Cloud
 providers with minimal initialization reconfiguration.
 
-[`runtimevar` package]: https://godoc.org/gocloud.dev/runtimevar
-[`filevar`]: https://godoc.org/gocloud.dev/runtimevar/filevar
-[`constantvar`]: https://godoc.org/gocloud.dev/runtimevar/constantvar
+[`runtimevar` package]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar
+[`filevar`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/filevar
+[`constantvar`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/constantvar
 
 ## Opening a Variable {#opening}
 
@@ -32,8 +32,8 @@ it in.
 
 ```go
 import (
-	"gocloud.dev/runtimevar"
-	_ "gocloud.dev/runtimevar/<driver>"
+	"github.com/kainoaseto/go-cloud/runtimevar"
+	_ "github.com/kainoaseto/go-cloud/runtimevar/<driver>"
 )
 ...
 v, err := runtimevar.OpenVariable(context.Background(), "<driver-url>")
@@ -53,7 +53,7 @@ over the connection settings, you can call the constructor function in the
 driver package directly (like `etcdvar.OpenVariable`).
 
 ```go
-import "gocloud.dev/runtimevar/<driver>"
+import "github.com/kainoaseto/go-cloud/runtimevar/<driver>"
 ...
 v, err := <driver>.OpenVariable(...)
 ...
@@ -69,15 +69,15 @@ When opening the variable, you can provide a [decoder][] parameter (either as a
 whether the raw value stored in the variable is interpreted as a `string`, a
 `[]byte`, or as JSON. Here's an example of using a JSON encoder:
 
-{{< goexample src="gocloud.dev/runtimevar.Example_jsonDecoder" imports="0" >}}
+{{< goexample src="github.com/kainoaseto/go-cloud/runtimevar.Example_jsonDecoder" imports="0" >}}
 
-[`*runtimevar.Variable`]: https://godoc.org/gocloud.dev/runtimevar#Variable
-[`runtimevar.OpenVariable`]: https://godoc.org/gocloud.dev/runtimevar#OpenVariable
+[`*runtimevar.Variable`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#Variable
+[`runtimevar.OpenVariable`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#OpenVariable
 ["blank import"]: https://golang.org/doc/effective_go.html#blank_import
 [Concepts: URLs]: {{< ref "/concepts/urls.md" >}}
-[decoder]: https://godoc.org/gocloud.dev/runtimevar#Decoder
+[decoder]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#Decoder
 [guide below]: {{< ref "#services" >}}
-[query parameter]: https://godoc.org/gocloud.dev/runtimevar#DecoderByName
+[query parameter]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#DecoderByName
 [`wire` package]: http://github.com/google/wire
 
 ## Using a Variable {#using}
@@ -92,15 +92,15 @@ returns the latest good [`Snapshot`][] of the variable value, blocking if no
 good value has *ever* been detected. The dynamic type of `Snapshot.Value`
 depends on the decoder you provided when creating the `Variable`.
 
-{{< goexample src="gocloud.dev/runtimevar.ExampleVariable_Latest" imports="0" >}}
+{{< goexample src="github.com/kainoaseto/go-cloud/runtimevar.ExampleVariable_Latest" imports="0" >}}
 
 To avoid blocking, you can pass an already-`Done` context. You can also use
 [`Variable.CheckHealth`][], which reports as healthy when `Latest` will
 return a value without blocking.
 
-[`Variable.Latest`]: https://godoc.org/gocloud.dev/runtimevar#Variable.Latest
-[`Variable.CheckHealth`]: https://godoc.org/gocloud.dev/runtimevar#Variable.CheckHealth
-[`Snapshot`]: https://godoc.org/gocloud.dev/runtimevar#Snapshot
+[`Variable.Latest`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#Variable.Latest
+[`Variable.CheckHealth`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#Variable.CheckHealth
+[`Snapshot`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#Snapshot
 
 ### Watch {#watch}
 
@@ -108,13 +108,13 @@ return a value without blocking.
 it has different semantics than `Latest` and may be useful in some scenarios. We
 recommend starting with `Latest` as it's conceptually simpler to work with.
 
-[`Watch`]: https://godoc.org/gocloud.dev/runtimevar#Variable.Watch
+[`Watch`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#Variable.Watch
 
 ## Other Usage Samples
 
 * [CLI Sample](https://github.com/google/go-cloud/tree/master/samples/gocdk-runtimevar)
-* [Guestbook sample](https://gocloud.dev/tutorials/guestbook/)
-* [runtimevar package examples](https://godoc.org/gocloud.dev/runtimevar#pkg-examples)
+* [Guestbook sample](https://github.com/kainoaseto/go-cloud/tutorials/guestbook/)
+* [runtimevar package examples](https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar#pkg-examples)
 
 ## Supported Services {#services}
 
@@ -134,16 +134,16 @@ alternatives, including using environment variables.
 [`gcloud auth login`]: https://cloud.google.com/sdk/gcloud/reference/auth/login
 
 {{< goexample
-"gocloud.dev/runtimevar/gcpruntimeconfig.Example_openVariableFromURL" >}}
+"github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig.Example_openVariableFromURL" >}}
 
 #### GCP Constructor {#gcprc-ctor}
 
 The [`gcpruntimeconfig.OpenVariable`][] constructor opens a Runtime Configurator
 variable.
 
-{{< goexample "gocloud.dev/runtimevar/gcpruntimeconfig.ExampleOpenVariable" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig.ExampleOpenVariable" >}}
 
-[`gcpruntimeconfig.OpenVariable`]: https://godoc.org/gocloud.dev/runtimevar/gcpruntimeconfig#OpenVariable
+[`gcpruntimeconfig.OpenVariable`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/gcpruntimeconfig#OpenVariable
 
 ### AWS Parameter Store {#awsps}
 
@@ -161,24 +161,24 @@ alternatives, including using environment variables.
 [AWS Session]: https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
 
 {{< goexample
-"gocloud.dev/runtimevar/awsparamstore.Example_openVariableFromURL" >}}
+"github.com/kainoaseto/go-cloud/runtimevar/awsparamstore.Example_openVariableFromURL" >}}
 
 #### AWS Constructor {#awsps-ctor}
 
 The [`awsparamstore.OpenVariable`][] constructor opens a Parameter Store
 variable.
 
-{{< goexample "gocloud.dev/runtimevar/awsparamstore.ExampleOpenVariable" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/awsparamstore.ExampleOpenVariable" >}}
 
 [`awsparamstore.OpenVariable`]:
-https://godoc.org/gocloud.dev/runtimevar/awsparamstore#OpenVariable
+https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/awsparamstore#OpenVariable
 
 ### etcd {#etcd}
 
 To open a variable stored in [etcd][] via URL, you can use the
 `runtimevar.OpenVariable` function as follows.
 
-{{< goexample "gocloud.dev/runtimevar/etcdvar.Example_openVariableFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/etcdvar.Example_openVariableFromURL" >}}
 
 [etcd]: https://etcd.io/
 
@@ -187,9 +187,9 @@ To open a variable stored in [etcd][] via URL, you can use the
 The [`etcdvar.OpenVariable`][] constructor opens an `etcd` variable.
 
 [`etcdvar.OpenVariable`]:
-https://godoc.org/gocloud.dev/runtimevar/etcdvar#OpenVariable
+https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/etcdvar#OpenVariable
 
-{{< goexample "gocloud.dev/runtimevar/etcdvar.ExampleOpenVariable" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/etcdvar.ExampleOpenVariable" >}}
 
 ### HTTP {#http}
 
@@ -198,16 +198,16 @@ https://godoc.org/gocloud.dev/runtimevar/etcdvar#OpenVariable
 `httpvar` will periodically make an HTTP `GET` request to that URL, with the
 `decode` URL parameter removed (if present).
 
-{{< goexample "gocloud.dev/runtimevar/httpvar.Example_openVariableFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/httpvar.Example_openVariableFromURL" >}}
 
 #### HTTP Constructor {#http-ctor}
 
 The [`httpvar.OpenVariable`][] constructor opens a variable with a `http.Client`
 and a URL.
 
-{{< goexample "gocloud.dev/runtimevar/httpvar.ExampleOpenVariable" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/httpvar.ExampleOpenVariable" >}}
 
-[`httpvar.OpenVariable`]: https://godoc.org/gocloud.dev/runtimevar/httpvar#OpenVariable
+[`httpvar.OpenVariable`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/httpvar#OpenVariable
 
 ### Blob {#blob}
 
@@ -216,21 +216,21 @@ and a URL.
 of the bucket, and then use `runtimevar.OpenVariable` as shown below.
 `blobvar` will periodically re-fetch the contents of the blob.
 
-{{< goexample "gocloud.dev/runtimevar/blobvar.Example_openVariableFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/blobvar.Example_openVariableFromURL" >}}
 
-[Go CDK blob]: https://gocloud.dev/howto/blob/
+[Go CDK blob]: https://github.com/kainoaseto/go-cloud/howto/blob/
 
 You can also use [`blobvar.OpenVariable`][].
 
-[`blobvar.OpenVariable`]: https://godoc.org/gocloud.dev/runtimevar/blobvar#OpenVariable
+[`blobvar.OpenVariable`]: https://godoc.org/github.com/kainoaseto/go-cloud/runtimevar/blobvar#OpenVariable
 
 ### Local {#local}
 
 You can create an in-memory variable (useful for testing) using `constantvar`:
 
-{{< goexample "gocloud.dev/runtimevar/constantvar.Example_openVariableFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/constantvar.Example_openVariableFromURL" >}}
 
 Alternatively, you can create a variable based on the contents of a file using
 `filevar`:
 
-{{< goexample "gocloud.dev/runtimevar/filevar.Example_openVariableFromURL" >}}
+{{< goexample "github.com/kainoaseto/go-cloud/runtimevar/filevar.Example_openVariableFromURL" >}}

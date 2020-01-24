@@ -36,7 +36,7 @@ go.mod files to create an test new releases.
 
 The tool processes all modules listed in the 'allmodules'
 file. For each module it handles all dependencies on
-other gocloud.dev modules.
+other github.com/kainoaseto/go-cloud modules.
 
 Run it from the root directory of the repository, as follows:
 
@@ -133,10 +133,10 @@ func runOnGomod(path string, reqHandler func(gomodPath, mod, modPath string)) {
 	fmt.Println("Processing", gomodPath)
 	modInfo := parseModuleInfo(gomodPath)
 
-	base := "gocloud.dev"
+	base := "github.com/kainoaseto/go-cloud"
 
 	for _, r := range modInfo.Require {
-		// Find requirements on modules within the gocloud.dev tree.
+		// Find requirements on modules within the github.com/kainoaseto/go-cloud tree.
 		if strings.HasPrefix(r.Path, base) {
 			// Find the relative path from 'path' and the module required here.
 			var reqPath string

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/samples
+module github.com/kainoaseto/go-cloud/samples
 
 go 1.12
 
@@ -28,29 +28,29 @@ require (
 	github.com/google/uuid v1.1.1
 	github.com/google/wire v0.3.0
 	github.com/gorilla/mux v1.7.2
+	github.com/kainoaseto/go-cloud v0.18.0
+	github.com/kainoaseto/go-cloud/docstore/mongodocstore v0.18.0
+	github.com/kainoaseto/go-cloud/pubsub/kafkapubsub v0.18.0
+	github.com/kainoaseto/go-cloud/pubsub/natspubsub v0.18.0
+	github.com/kainoaseto/go-cloud/pubsub/rabbitpubsub v0.18.0
+	github.com/kainoaseto/go-cloud/runtimevar/etcdvar v0.18.0
+	github.com/kainoaseto/go-cloud/secrets/hashivault v0.18.0
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271
 	go.opencensus.io v0.22.2
-	gocloud.dev v0.18.0
-	gocloud.dev/docstore/mongodocstore v0.18.0
-	gocloud.dev/pubsub/kafkapubsub v0.18.0
-	gocloud.dev/pubsub/natspubsub v0.18.0
-	gocloud.dev/pubsub/rabbitpubsub v0.18.0
-	gocloud.dev/runtimevar/etcdvar v0.18.0
-	gocloud.dev/secrets/hashivault v0.18.0
 	google.golang.org/genproto v0.0.0-20191108220845-16a3f7862a1a
 	gopkg.in/pipe.v2 v2.0.0-20140414041502-3c2ca4d52544
 )
 
-replace gocloud.dev => ../
+replace github.com/kainoaseto/go-cloud => ../
 
-replace gocloud.dev/docstore/mongodocstore => ../docstore/mongodocstore
+replace github.com/kainoaseto/go-cloud/docstore/mongodocstore => ../docstore/mongodocstore
 
-replace gocloud.dev/pubsub/kafkapubsub => ../pubsub/kafkapubsub
+replace github.com/kainoaseto/go-cloud/pubsub/kafkapubsub => ../pubsub/kafkapubsub
 
-replace gocloud.dev/pubsub/natspubsub => ../pubsub/natspubsub
+replace github.com/kainoaseto/go-cloud/pubsub/natspubsub => ../pubsub/natspubsub
 
-replace gocloud.dev/pubsub/rabbitpubsub => ../pubsub/rabbitpubsub
+replace github.com/kainoaseto/go-cloud/pubsub/rabbitpubsub => ../pubsub/rabbitpubsub
 
-replace gocloud.dev/runtimevar/etcdvar => ../runtimevar/etcdvar
+replace github.com/kainoaseto/go-cloud/runtimevar/etcdvar => ../runtimevar/etcdvar
 
-replace gocloud.dev/secrets/hashivault => ../secrets/hashivault
+replace github.com/kainoaseto/go-cloud/secrets/hashivault => ../secrets/hashivault

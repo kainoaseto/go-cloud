@@ -33,7 +33,7 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/kainoaseto/go-cloud/concepts/urls/ for background information.
 //
 //
 // As
@@ -63,7 +63,7 @@
 // https://cloud.google.com/firestore/docs/query-data/indexing for details.
 //
 // See https://cloud.google.com/firestore/docs/query-data/queries for more information on Firestore queries.
-package gcpfirestore // import "gocloud.dev/docstore/gcpfirestore"
+package gcpfirestore // import "github.com/kainoaseto/go-cloud/docstore/gcpfirestore"
 
 import (
 	"bytes"
@@ -78,11 +78,11 @@ import (
 	"github.com/golang/protobuf/proto"
 	tspb "github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/google/wire"
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
+	"github.com/kainoaseto/go-cloud/docstore"
+	"github.com/kainoaseto/go-cloud/docstore/driver"
+	"github.com/kainoaseto/go-cloud/gcp"
+	"github.com/kainoaseto/go-cloud/internal/gcerr"
+	"github.com/kainoaseto/go-cloud/internal/useragent"
 	"google.golang.org/api/option"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"
 	"google.golang.org/grpc/metadata"
@@ -167,7 +167,7 @@ func OpenCollection(client *vkit.Client, collResourceID, nameField string, opts 
 //
 // For the collection to be usable with Query.Delete and Query.Update, nameFunc
 // must work with both map and struct types representing the same underlying
-// data structure. See gocloud.dev/docstore/drivertest.HighScoreKey for an example.
+// data structure. See github.com/kainoaseto/go-cloud/docstore/drivertest.HighScoreKey for an example.
 func OpenCollectionWithNameFunc(client *vkit.Client, collResourceID string, nameFunc func(docstore.Document) string, opts *Options) (*docstore.Collection, error) {
 	c, err := newCollection(client, collResourceID, "", nameFunc, opts)
 	if err != nil {

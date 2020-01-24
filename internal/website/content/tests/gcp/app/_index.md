@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/tests/gcp/app
+title: github.com/kainoaseto/go-cloud/tests/gcp/app
 type: pkg
 ---

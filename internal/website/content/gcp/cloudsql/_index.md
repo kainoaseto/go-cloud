@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/gcp/cloudsql
+title: github.com/kainoaseto/go-cloud/gcp/cloudsql
 type: pkg
 ---

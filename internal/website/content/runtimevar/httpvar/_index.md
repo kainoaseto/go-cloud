@@ -1,4 +1,4 @@
 ---
-title: gocloud.dev/runtimevar/httpvar
+title: github.com/kainoaseto/go-cloud/runtimevar/httpvar
 type: pkg
 ---
