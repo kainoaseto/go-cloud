@@ -458,10 +458,20 @@ func (it *documentIterator) Next(ctx context.Context, doc driver.Document) error
 	if it.curr >= len(it.items) {
 		// Make a new query request at the end of this page.
 		var err error
-		it.items, it.last, it.asFunc, err = it.qr.run(ctx, it.last)
+		for it.items, it.last, it.asFunc, err = it.qr.run(ctx, it.last); len(it.items) == 0  && it.last != nil; {
+			if err != nil {
+				return err
+			}
+		}
+
 		if err != nil {
 			return err
 		}
+
+		if len(it.items) == 0 && it.last == nil {
+			return io.EOF
+		}
+
 		it.curr = 0
 	}
 	if err := decodeDoc(&dyn.AttributeValue{M: it.items[it.curr]}, doc); err != nil {
