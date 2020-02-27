@@ -458,7 +458,7 @@ func (it *documentIterator) Next(ctx context.Context, doc driver.Document) error
 	if it.curr >= len(it.items) {
 		// Make a new query request at the end of this page.
 		var err error
-		for it.items, it.last, it.asFunc, err = it.qr.run(ctx, it.last); len(it.items) == 0  && it.last != nil; {
+		for it.items, it.last, it.asFunc, err = it.qr.run(ctx, it.last); len(it.items) == 0  && it.last != nil; it.items, it.last, it.asFunc, err = it.qr.run(ctx, it.last) {
 			if err != nil {
 				return err
 			}
